@@ -1,0 +1,13 @@
+{
+  "name": "@crossed/demo",
+  "version": "1.0.0",
+  "description": "cross ui lib react-native and web",
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@crossed/core": "1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-native": "0.72.3"
+  }
+}

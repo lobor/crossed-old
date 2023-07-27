@@ -1,0 +1,16 @@
+{
+  "name": "crossed-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "cross ui lib react-native and web",
+  "scripts": {
+    "web": "cd apps/web && yarn dev",
+    "native": "cd apps/native && yarn start"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
