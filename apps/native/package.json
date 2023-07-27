@@ -13,8 +13,6 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@crossed/core": "1.0.0",
-    "@crossed/demo": "1.0.0",
     "@expo/vector-icons": "^13.0.0",
     "@react-navigation/native": "^6.0.2",
     "expo": "~49.0.5",
