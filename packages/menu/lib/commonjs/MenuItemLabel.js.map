@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/MenuItemLabel.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAAkC;AAE3B,MAAM,gBAAgB,CAAC,4BAC5B,yBAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,6BAAAA,QAAA,cAAC,uBAAqB,GAAG,OAAO,OAC7B,QACH;AAEJ,CAAC;AAEH,IAAO,wBAAQ;",
+  "names": ["React"]
+}

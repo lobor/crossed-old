@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA,qBAAuC;AAEhC,SAAS,cAA4B;AAAA,EAC1C;AACF,GAEG;AACD,QAAM,cAAU,eAAAA,SAAY,IAAI;AAChC,UAAQ,cAAc;AACtB,SAAO;AACT;",
+  "names": ["DividerMain"]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/LinkText.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAAkC;AAE3B,MAAM,WAAW,CAAC,yBACvB,yBAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,6BAAAA,QAAA,cAAC,oBAAiB,KAAW,GAAG,SAC7B,QACH;AAEJ,CAAC;",
+  "names": ["React"]
+}

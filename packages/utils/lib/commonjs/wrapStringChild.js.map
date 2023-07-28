@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/wrapStringChild.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAAkB;AAEX,MAAM,kBAAkB,CAAC,UAAe,kBAAuB;AACpE,SAAO,aAAAA,QAAM,SAAS,IAAI,UAAU,CAAC,UAAU;AAHjD;AAII,WAAO,OAAO,UAAU,YACtB,OAAO,UAAU,aAChB,+BAAO,UAAS,aAAAA,QAAM,aACpB,SAAO,WAAM,UAAN,mBAAa,cAAa,YAChC,SAAO,WAAM,UAAN,mBAAa,cAAa,YACrC,6BAAAA,QAAA,cAAC,qBAAe,KAAM,IAEtB;AAAA,EAEJ,CAAC;AACH;",
+  "names": ["React"]
+}

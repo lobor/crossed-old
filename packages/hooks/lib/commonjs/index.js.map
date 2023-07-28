@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kCAAqC;AACrC,IAAAA,+BAAoC;AACpC,oCAAuC;AACvC,oCAAuC;AACvC,uBAA0B;",
+  "names": ["import_useControllableState"]
+}

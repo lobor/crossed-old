@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAAiC;AACjC,sBAAyB;AACzB,qBAAwB;AAOxB,MAAM,aAAa,CAAkB;AAAA,EACnC;AAAA,EACA;AACF,MAGM;AACJ,QAAM,WAAO,YAAAA,MAAS,IAAI;AAE1B,OAAK,WAAO,0BAAS,IAAI;AACzB,OAAK,KAAK,cAAc;AACxB,SAAO;AACT;",
+  "names": ["LinkMain"]
+}

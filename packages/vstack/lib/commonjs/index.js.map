@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,oBAAqC;AAE9B,SAAS,aAA6C;AAAA,EAC3D;AAAA,EACA;AACF,GAGG;AACD,QAAM,aAAS,cAAAA,QAAW,MAAM,MAAM;AAEtC,SAAO,cAAc;AACrB,SAAO;AACT;",
+  "names": ["VStackMain"]
+}

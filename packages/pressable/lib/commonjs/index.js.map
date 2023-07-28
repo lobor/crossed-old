@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,uBAAyC;AAElC,SAAS,gBAAgC;AAAA,EAC9C;AACF,GAEG;AACD,QAAM,gBAAY,iBAAAA,SAAc,IAAI;AAEpC,YAAU,cAAc;AACxB,SAAO;AACT;",
+  "names": ["PressableMain"]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/TooltipText.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAE3B,MAAM,cAAc,CAAC,sBAC1B,WAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,oCAAC,qBAAkB,KAAW,GAAG,SAC9B,QACH;AAEJ,CAAC;",
+  "names": []
+}

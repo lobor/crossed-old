@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../src/Button/Text.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAAuB;AACvB,0BAAmC;AAE5B,MAAM,WAAO;AAAA,EAClB,oBAAAA;AAAA,EACA;AAAA,IACE,OAAO;AAAA,IACP,YAAY;AAAA;AAAA,IAEZ,YAAY;AAAA,EACd;AAAA,EACA,EAAE,eAAe,CAAC,OAAO,GAAG,OAAO,mBAAmB;AACxD;",
+  "names": ["TextNative"]
+}

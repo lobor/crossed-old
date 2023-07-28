@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../src/MenuPopover/PopoverContext.ts"],
+  "mappings": "AAAA,SAAS,qBAAqB;AAEvB,MAAM,CAAC,iBAAiB,UAAU,IACvC,cAAmB,gBAAgB;",
+  "names": []
+}

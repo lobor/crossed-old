@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/ProgressContext.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAA8B;AAEvB,MAAM,CAAC,kBAAkB,WAAW,QACzC,4BAAmB,iBAAiB;",
+  "names": []
+}

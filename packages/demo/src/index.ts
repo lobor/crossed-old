@@ -1,1 +1,1 @@
-export { FlexDemo } from "./Flex";
+export * from './Button';

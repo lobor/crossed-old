@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/MenuItemLabel.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAE3B,MAAM,gBAAgB,CAAC,wBAC5B,WAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,oCAAC,uBAAqB,GAAG,OAAO,OAC7B,QACH;AAEJ,CAAC;AAEH,IAAO,wBAAQ;",
+  "names": []
+}

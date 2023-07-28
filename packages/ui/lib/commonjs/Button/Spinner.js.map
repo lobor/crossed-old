@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../src/Button/Spinner.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAAuB;AACvB,0BAAkC;AAE3B,MAAM,cAAU;AAAA,EACrB;AAAA,EACA,CAAC;AAAA,EACD,EAAE,eAAe,CAAC,UAAU,GAAG,cAAc,CAAC,OAAO,EAAE;AACzD;",
+  "names": []
+}

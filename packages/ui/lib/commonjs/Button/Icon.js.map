@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../../src/Button/Icon.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAAoC;AAEpC,MAAM,cAAU,oBAAO,yBAAa,CAAC,GAAG,CAAC,CAAC;AAEnC,MAAM,WAAO;AAAA,EAClB;AAAA,EACA,CAAC;AAAA,EACD;AAAA,IACE,eAAe,CAAC,OAAO;AAAA,EACzB;AAAA,EACA;AAAA,IACE,kBAAkB;AAAA,MAChB,QAAQ;AAAA,IACV;AAAA,EACF;AACF;",
+  "names": []
+}

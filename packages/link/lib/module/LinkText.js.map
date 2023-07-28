@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/LinkText.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAE3B,MAAM,WAAW,CAAC,qBACvB,WAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,oCAAC,oBAAiB,KAAW,GAAG,SAC7B,QACH;AAEJ,CAAC;",
+  "names": []
+}

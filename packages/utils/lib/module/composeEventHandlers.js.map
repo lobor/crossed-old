@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/composeEventHandlers.ts"],
+  "mappings": "AAAO,SAAS,qBACd,sBACA,iBACA;AACA,SAAO,SAAS,YAAY,OAAU;AACpC,QAAI;AACF,mEAAuB;AACvB,yDAAkB;AAAA,IACpB,SAAS,GAAP;AAAA,IAEF;AAAA,EACF;AACF;",
+  "names": []
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.tsx"],
+  "mappings": "AAAA,SAAS,WAAW,qBAAqB;AAElC,SAAS,gBAAgC;AAAA,EAC9C;AACF,GAEG;AACD,QAAM,YAAY,cAAc,IAAI;AAEpC,YAAU,cAAc;AACxB,SAAO;AACT;",
+  "names": []
+}

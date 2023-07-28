@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/TooltipText.tsx"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAAkC;AAE3B,MAAM,cAAc,CAAC,0BAC1B,yBAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,6BAAAA,QAAA,cAAC,qBAAkB,KAAW,GAAG,SAC9B,QACH;AAEJ,CAAC;",
+  "names": ["React"]
+}

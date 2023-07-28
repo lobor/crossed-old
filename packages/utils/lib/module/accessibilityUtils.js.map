@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/accessibilityUtils.ts"],
+  "mappings": "AAAO,MAAM,WAAW,CAAC,cACvB,YAAY,OAAO;",
+  "names": []
+}
