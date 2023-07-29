@@ -1,11 +1,6 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-import { useCheckbox } from './CheckboxProvider';
-const CheckboxIndicator = StyledCheckboxIndicator => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
-    children,
-    ...props
-  } = _ref;
+import React, { forwardRef } from "react";
+import { useCheckbox } from "./CheckboxProvider";
+const CheckboxIndicator = (StyledCheckboxIndicator) => forwardRef(({ children, ...props }, ref) => {
   const {
     isChecked,
     isDisabled,
@@ -16,22 +11,29 @@ const CheckboxIndicator = StyledCheckboxIndicator => /*#__PURE__*/forwardRef((_r
     isFocused,
     isIndeterminate,
     isFocusVisible
-  } = useCheckbox('CheckboxContext');
-  return /*#__PURE__*/React.createElement(StyledCheckboxIndicator, _extends({
-    states: {
-      hover: isHovered,
-      checked: isChecked,
-      disabled: isDisabled,
-      focusVisible: isFocusVisible,
-      invalid: isInvalid,
-      readOnly: isReadOnly,
-      active: isPressed,
-      focused: isFocused,
-      indeterminate: isIndeterminate
-    }
-  }, props, {
-    ref: ref
-  }), children);
+  } = useCheckbox("CheckboxContext");
+  return /* @__PURE__ */ React.createElement(
+    StyledCheckboxIndicator,
+    {
+      states: {
+        hover: isHovered,
+        checked: isChecked,
+        disabled: isDisabled,
+        focusVisible: isFocusVisible,
+        invalid: isInvalid,
+        readOnly: isReadOnly,
+        active: isPressed,
+        focused: isFocused,
+        indeterminate: isIndeterminate
+      },
+      ...props,
+      ref
+    },
+    children
+  );
 });
-export default CheckboxIndicator;
+var CheckboxIndicator_default = CheckboxIndicator;
+export {
+  CheckboxIndicator_default as default
+};
 //# sourceMappingURL=CheckboxIndicator.js.map

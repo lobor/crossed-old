@@ -1,11 +1,13 @@
-import { HStack as HStackMain } from './HStack';
-export function createHStack(_ref) {
-  let {
-    Root,
-    Spacer
-  } = _ref;
+import { HStack as HStackMain } from "./HStack";
+function createHStack({
+  Root,
+  Spacer
+}) {
   const HStack = HStackMain(Root, Spacer);
-  HStack.displayName = 'HStack';
+  HStack.displayName = "HStack";
   return HStack;
 }
+export {
+  createHStack
+};
 //# sourceMappingURL=index.js.map

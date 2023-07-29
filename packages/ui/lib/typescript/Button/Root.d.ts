@@ -1,7 +1,11 @@
 /// <reference types="react" />
-export declare const Root: import("react").ForwardRefExoticComponent<Omit<Omit<import("react-native").PressableProps & import("react").RefAttributes<import("react-native").View>, "variant" | "size"> & Partial<import("@crossed/core/lib/typescript/types").ComponentProps<import("react-native").StyleProp<import("react-native").ViewStyle> | ((state: import("react-native").PressableStateCallbackType) => import("react-native").StyleProp<import("react-native").ViewStyle>), {
+export declare const Root: import("react").ForwardRefExoticComponent<Omit<Omit<import("react-native").PressableProps & import("react").RefAttributes<import("react-native").View>, "colors" | "variant" | "size"> & Partial<import("@crossed/core/lib/typescript/types").ComponentProps<import("react-native").StyleProp<import("react-native").ViewStyle> | ((state: import("react-native").PressableStateCallbackType) => import("react-native").StyleProp<import("react-native").ViewStyle>), {
+    colors: {
+        red: unknown;
+        green: unknown;
+        gray: unknown;
+    };
     variant: {
-        default: unknown;
         filled: unknown;
         outlined: unknown;
     };

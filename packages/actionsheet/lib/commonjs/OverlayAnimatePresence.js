@@ -1,78 +1,95 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var OverlayAnimatePresence_exports = {};
+__export(OverlayAnimatePresence_exports, {
+  OverlayAnimatePresence: () => OverlayAnimatePresence
 });
-exports.OverlayAnimatePresence = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _reactNative = require("react-native");
-var _overlay = require("@crossed/overlay");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-/* eslint-disable react-hooks/exhaustive-deps */
-
+module.exports = __toCommonJS(OverlayAnimatePresence_exports);
+var import_react = __toESM(require("react"));
+var import_react_native = require("react-native");
+var import_overlay = require("@crossed/overlay");
 const defaultTransitionConfig = {
-  type: 'timing',
+  type: "timing",
   useNativeDriver: true,
   duration: 200,
   delay: 0
 };
-const OverlayAnimatePresence = /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
-    children,
-    visible = false,
-    AnimatePresence
-  } = _ref;
-  const animateValue = _react.default.useRef(new _reactNative.Animated.Value(0)).current;
-  const [animationState, setAnimationState] = _react.default.useState('');
-  const prevVisible = _react.default.useRef(visible);
-  const {
-    setExited
-  } = _react.default.useContext(_overlay.ExitAnimationContext);
-  _react.default.useEffect(() => {
-    if (animationState === 'entering' || animationState === 'exiting') {
-      const startAnimation = animationState === 'entering' ? 1 : 0;
-      const transition = defaultTransitionConfig;
-      if (AnimatePresence) {
-        _reactNative.Animated.sequence([
-        // @ts-ignore - delay is present in defaultTransitionConfig
-        //@ts-ignore
-        _reactNative.Animated[transition.type ?? 'timing'](animateValue, {
-          toValue: startAnimation,
-          useNativeDriver: true
-        })]).start(() => {
-          if (animationState === 'entering') {
-            setAnimationState('entered');
-          } else if (animationState === 'exiting') {
-            setAnimationState('exited');
-          }
-        });
+const OverlayAnimatePresence = (0, import_react.forwardRef)(
+  ({ children, visible = false, AnimatePresence }, ref) => {
+    const animateValue = import_react.default.useRef(new import_react_native.Animated.Value(0)).current;
+    const [animationState, setAnimationState] = import_react.default.useState("");
+    const prevVisible = import_react.default.useRef(visible);
+    const { setExited } = import_react.default.useContext(import_overlay.ExitAnimationContext);
+    import_react.default.useEffect(() => {
+      if (animationState === "entering" || animationState === "exiting") {
+        const startAnimation = animationState === "entering" ? 1 : 0;
+        const transition = defaultTransitionConfig;
+        if (AnimatePresence) {
+          import_react_native.Animated.sequence([
+            // @ts-ignore - delay is present in defaultTransitionConfig
+            //@ts-ignore
+            import_react_native.Animated[transition.type ?? "timing"](animateValue, {
+              toValue: startAnimation,
+              useNativeDriver: true
+            })
+          ]).start(() => {
+            if (animationState === "entering") {
+              setAnimationState("entered");
+            } else if (animationState === "exiting") {
+              setAnimationState("exited");
+            }
+          });
+        }
       }
+      if (animationState === "exited") {
+        setExited(true);
+      } else if (animationState === "entered") {
+        setExited(false);
+      }
+    }, [animationState]);
+    import_react.default.useEffect(() => {
+      if (prevVisible.current !== visible && !visible) {
+        setAnimationState("exiting");
+      }
+      if (visible) {
+        setAnimationState("entering");
+      }
+      prevVisible.current = visible;
+    }, [visible]);
+    if (!AnimatePresence) {
+      return children;
     }
-    if (animationState === 'exited') {
-      setExited(true);
-    } else if (animationState === 'entered') {
-      setExited(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [animationState]);
-  _react.default.useEffect(() => {
-    // if (!visible) {
-    if (prevVisible.current !== visible && !visible) {
-      setAnimationState('exiting');
-    }
-    if (visible) {
-      setAnimationState('entering');
-    }
-    prevVisible.current = visible;
-    // }
-  }, [visible]);
-  if (!AnimatePresence) {
-    return children;
+    return /* @__PURE__ */ import_react.default.createElement(AnimatePresence, { ref }, prevVisible.current ? children : null);
   }
-  return /*#__PURE__*/_react.default.createElement(AnimatePresence, {
-    ref: ref
-  }, prevVisible.current ? children : null);
+);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  OverlayAnimatePresence
 });
-exports.OverlayAnimatePresence = OverlayAnimatePresence;
 //# sourceMappingURL=OverlayAnimatePresence.js.map

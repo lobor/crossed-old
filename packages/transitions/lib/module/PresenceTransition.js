@@ -1,36 +1,27 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-// @ts-ignore
-import { ExitAnimationContext } from '@crossed/overlay';
-// import { ExitAnimationContext } from '../../primitives/Overlay/ExitAnimationContext';
-import { Transition } from './Transition';
-// import type { IPresenceTransitionProps } from './types';
-// import { useHasResponsiveProps } from '../../@crossed/hooks/useHasResponsiveProps';
-
-const PresenceTransition = (_ref, ref) => {
-  let {
-    visible = false,
-    onTransitionComplete,
-    ...rest
-  } = _ref;
-  // const [animationExited, setAnimationExited] = React.useState(!visible);
-
-  const {
-    setExited
-  } = React.useContext(ExitAnimationContext);
-  return /*#__PURE__*/React.createElement(Transition, _extends({
-    visible: visible,
-    onTransitionComplete: state => {
-      if (state === 'exited') {
-        setExited(true);
-      } else {
-        setExited(false);
-      }
-      onTransitionComplete && onTransitionComplete(state);
+import React, { forwardRef } from "react";
+import { ExitAnimationContext } from "@crossed/overlay";
+import { Transition } from "./Transition";
+const PresenceTransition = ({ visible = false, onTransitionComplete, ...rest }, ref) => {
+  const { setExited } = React.useContext(ExitAnimationContext);
+  return /* @__PURE__ */ React.createElement(
+    Transition,
+    {
+      visible,
+      onTransitionComplete: (state) => {
+        if (state === "exited") {
+          setExited(true);
+        } else {
+          setExited(false);
+        }
+        onTransitionComplete && onTransitionComplete(state);
+      },
+      ...rest,
+      ref
     }
-  }, rest, {
-    ref: ref
-  }));
+  );
 };
-export default /*#__PURE__*/forwardRef(PresenceTransition);
+var PresenceTransition_default = forwardRef(PresenceTransition);
+export {
+  PresenceTransition_default as default
+};
 //# sourceMappingURL=PresenceTransition.js.map

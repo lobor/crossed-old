@@ -29,7 +29,8 @@ const Text = (0, import_core.styled)(
     color: "$color",
     fontFamily: "$body",
     //@ts-ignore
-    userSelect: "none"
+    userSelect: "none",
+    shade: 0
   },
   { ancestorStyle: ["_text"], DEBUG: "STYLEDBUTTONTEXT" }
 );

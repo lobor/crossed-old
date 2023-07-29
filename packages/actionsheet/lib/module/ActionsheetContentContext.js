@@ -1,3 +1,7 @@
-import { createContext } from '@crossed/utils';
-export const [ActionsheetContentProvider, useActionsheetContent] = createContext('ActionsheetContentContext');
+import { createContext } from "@crossed/utils";
+const [ActionsheetContentProvider, useActionsheetContent] = createContext("ActionsheetContentContext");
+export {
+  ActionsheetContentProvider,
+  useActionsheetContent
+};
 //# sourceMappingURL=ActionsheetContentContext.js.map

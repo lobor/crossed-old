@@ -1,19 +1,43 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Modal_exports = {};
+__export(Modal_exports, {
+  default: () => Modal_default
 });
-exports.default = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _reactNative = require("react-native");
-var _hooks = require("@crossed/hooks");
-var _Context = require("./Context");
-var _overlay = require("@crossed/overlay");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */
-const Modal = StyledModal => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
+module.exports = __toCommonJS(Modal_exports);
+var import_react = __toESM(require("react"));
+var import_react_native = require("react-native");
+var import_hooks = require("@crossed/hooks");
+var import_Context = require("./Context");
+var import_overlay = require("@crossed/overlay");
+const Modal = (StyledModal) => (0, import_react.forwardRef)(
+  ({
     children,
     isOpen,
     onClose,
@@ -26,59 +50,64 @@ const Modal = StyledModal => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => 
     unmountOnExit = true,
     _experimentalOverlay = true,
     ...props
-  } = _ref;
-  const bottomInset = (0, _hooks.useKeyboardBottomInset)();
-  const {
-    useRNModal,
-    ...remainingProps
-  } = props;
-  const [visible, setVisible] = (0, _hooks.useControllableState)({
-    value: defaultIsOpen ?? isOpen,
-    onChange: val => {
-      if (!val) onClose && onClose();
-    }
-  });
-  const handleClose = _react.default.useCallback(() => {
-    setVisible(false);
-  }, [setVisible]);
-  const avoidKeyboardSpacer = /*#__PURE__*/_react.default.createElement(_reactNative.View, {
-    style: {
-      // @ts-ignore
-      pointerEvents: 'box-none',
-      width: '100%',
-      height: avoidKeyboard ? bottomInset : undefined
-    }
-  });
-  const contextValue = _react.default.useMemo(() => {
-    return {
+  }, ref) => {
+    const bottomInset = (0, import_hooks.useKeyboardBottomInset)();
+    const { useRNModal, ...remainingProps } = props;
+    const [visible, setVisible] = (0, import_hooks.useControllableState)({
+      value: defaultIsOpen ?? isOpen,
+      onChange: (val) => {
+        if (!val)
+          onClose && onClose();
+      }
+    });
+    const handleClose = import_react.default.useCallback(() => {
+      setVisible(false);
+    }, [setVisible]);
+    const avoidKeyboardSpacer = /* @__PURE__ */ import_react.default.createElement(
+      import_react_native.View,
+      {
+        style: {
+          // @ts-ignore
+          pointerEvents: "box-none",
+          width: "100%",
+          height: avoidKeyboard ? bottomInset : void 0
+        }
+      }
+    );
+    const contextValue = import_react.default.useMemo(() => {
+      return {
+        handleClose,
+        initialFocusRef,
+        finalFocusRef,
+        closeOnOverlayClick,
+        visible,
+        avoidKeyboard,
+        bottomInset
+      };
+    }, [
       handleClose,
       initialFocusRef,
-      finalFocusRef,
       closeOnOverlayClick,
-      visible,
+      finalFocusRef,
       avoidKeyboard,
-      bottomInset
-    };
-  }, [handleClose, initialFocusRef, closeOnOverlayClick, finalFocusRef, avoidKeyboard, bottomInset, visible]);
-  if (!_experimentalOverlay) {
-    return /*#__PURE__*/_react.default.createElement(_Context.ModalContext.Provider, {
-      value: contextValue
-    }, /*#__PURE__*/_react.default.createElement(StyledModal, _extends({}, remainingProps, {
-      ref: ref
-    }), children, avoidKeyboard ? avoidKeyboardSpacer : null));
+      bottomInset,
+      visible
+    ]);
+    if (!_experimentalOverlay) {
+      return /* @__PURE__ */ import_react.default.createElement(import_Context.ModalContext.Provider, { value: contextValue }, /* @__PURE__ */ import_react.default.createElement(StyledModal, { ...remainingProps, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null));
+    }
+    return /* @__PURE__ */ import_react.default.createElement(
+      import_overlay.Overlay,
+      {
+        isOpen: visible,
+        onRequestClose: handleClose,
+        isKeyboardDismissable,
+        useRNModal,
+        unmountOnExit
+      },
+      /* @__PURE__ */ import_react.default.createElement(import_Context.ModalContext.Provider, { value: contextValue }, /* @__PURE__ */ import_react.default.createElement(StyledModal, { ...remainingProps, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null))
+    );
   }
-  return /*#__PURE__*/_react.default.createElement(_overlay.Overlay, {
-    isOpen: visible,
-    onRequestClose: handleClose,
-    isKeyboardDismissable: isKeyboardDismissable,
-    useRNModal: useRNModal,
-    unmountOnExit: unmountOnExit
-  }, /*#__PURE__*/_react.default.createElement(_Context.ModalContext.Provider, {
-    value: contextValue
-  }, /*#__PURE__*/_react.default.createElement(StyledModal, _extends({}, remainingProps, {
-    ref: ref
-  }), children, avoidKeyboard ? avoidKeyboardSpacer : null)));
-});
-var _default = Modal;
-exports.default = _default;
+);
+var Modal_default = Modal;
 //# sourceMappingURL=Modal.js.map

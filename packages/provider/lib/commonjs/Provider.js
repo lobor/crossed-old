@@ -1,63 +1,77 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Provider_exports = {};
+__export(Provider_exports, {
+  CrossedContext: () => CrossedContext,
+  CrossedContextProvider: () => CrossedContextProvider,
+  Provider: () => Provider
 });
-exports.Provider = exports.CrossedContextProvider = exports.CrossedContext = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _reactNative = require("react-native");
-var _interactions = require("@react-native-aria/interactions");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const CrossedContext = /*#__PURE__*/_react.default.createContext({});
-exports.CrossedContext = CrossedContext;
-const CrossedContextProvider = _ref => {
-  let {
-    children,
-    components,
-    ...props
-  } = _ref;
-  _react.default.useEffect(() => {
+module.exports = __toCommonJS(Provider_exports);
+var import_react = __toESM(require("react"));
+var import_react_native = require("react-native");
+var import_interactions = require("@react-native-aria/interactions");
+const CrossedContext = import_react.default.createContext({});
+const CrossedContextProvider = ({
+  children,
+  components,
+  ...props
+}) => {
+  import_react.default.useEffect(() => {
     let escapeKeyListener = null;
-    if (_reactNative.Platform.OS === 'web') {
-      escapeKeyListener = e => {
-        if (e.key === 'Escape') {
-          if (_interactions.keyboardDismissHandlerManager.length() > 0) {
-            const lastHandler = _interactions.keyboardDismissHandlerManager.pop();
+    if (import_react_native.Platform.OS === "web") {
+      escapeKeyListener = (e) => {
+        if (e.key === "Escape") {
+          if (import_interactions.keyboardDismissHandlerManager.length() > 0) {
+            const lastHandler = import_interactions.keyboardDismissHandlerManager.pop();
             lastHandler();
           }
         }
       };
-      document.addEventListener('keydown', escapeKeyListener);
+      document.addEventListener("keydown", escapeKeyListener);
     }
     return () => {
-      if (_reactNative.Platform.OS === 'web') {
-        document.removeEventListener('keydown', escapeKeyListener);
+      if (import_react_native.Platform.OS === "web") {
+        document.removeEventListener("keydown", escapeKeyListener);
       }
     };
   }, []);
-  return /*#__PURE__*/_react.default.createElement(CrossedContext.Provider, _extends({
-    value: components
-  }, props), children);
+  return /* @__PURE__ */ import_react.default.createElement(CrossedContext.Provider, { value: components, ...props }, children);
 };
-exports.CrossedContextProvider = CrossedContextProvider;
-const Provider = _ref2 => {
-  let {
-    StyledProvider
-  } = _ref2;
-  return _ref3 => {
-    let {
-      children,
-      components,
-      config,
-      ...props
-    } = _ref3;
-    return /*#__PURE__*/_react.default.createElement(CrossedContextProvider, {
-      components: components
-    }, /*#__PURE__*/_react.default.createElement(StyledProvider, _extends({
-      config: config
-    }, props), children));
+const Provider = ({ StyledProvider }) => {
+  return ({ children, components, config, ...props }) => {
+    return /* @__PURE__ */ import_react.default.createElement(CrossedContextProvider, { components }, /* @__PURE__ */ import_react.default.createElement(StyledProvider, { config, ...props }, children));
   };
 };
-exports.Provider = Provider;
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  CrossedContext,
+  CrossedContextProvider,
+  Provider
+});
 //# sourceMappingURL=Provider.js.map

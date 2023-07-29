@@ -653,7 +653,7 @@ export const config = {
       '5/6': '83.333%',
       'full': '100%',
     },
-    borderWidths: {
+    borderWidth: {
       0: 0,
       1: 1,
       2: 2,

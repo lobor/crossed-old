@@ -1,1 +1,6 @@
-{"version":3,"names":["React","forwardRef","AlertText","StyledAlertText","_ref","ref","children","props","createElement","_extends"],"sourceRoot":"../../src","sources":["AlertText.tsx"],"mappings":";AAAA,OAAOA,KAAK,IAAIC,UAAU,QAAQ,OAAO;AAEzC,OAAO,MAAMC,SAAS,GAAIC,eAAoB,iBAC5CF,UAAU,CAAC,CAAAG,IAAA,EAA8BC,GAAS,KAAK;EAAA,IAA3C;IAAEC,QAAQ;IAAE,GAAGC;EAAW,CAAC,GAAAH,IAAA;EACrC,oBACEJ,KAAA,CAAAQ,aAAA,CAACL,eAAe,EAAAM,QAAA;IAACJ,GAAG,EAAEA;EAAI,GAAKE,KAAK,GACjCD,QACc,CAAC;AAEtB,CAAC,CAAC"}
+{
+  "version": 3,
+  "sources": ["../../src/AlertText.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAE3B,MAAM,YAAY,CAAC,oBACxB,WAAW,CAAC,EAAE,UAAU,GAAG,MAAM,GAAQ,QAAc;AACrD,SACE,oCAAC,mBAAgB,KAAW,GAAG,SAC5B,QACH;AAEJ,CAAC;",
+  "names": []
+}

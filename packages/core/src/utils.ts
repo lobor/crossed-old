@@ -55,7 +55,8 @@ export function resolveStringToken(
   config: any,
   tokenScaleMap: any,
   propName: any,
-  scale?: any
+  scale?: any,
+  props?: any
 ) {
   let typeofResult = 'string';
   const token_scale = scale ?? tokenScaleMap[propName];
@@ -75,13 +76,19 @@ export function resolveStringToken(
     } else {
       if (tokenScaleMap[propName]) {
         let modifiedTokenScale = token_scale;
+        let shade = 9;
         if (
           token_scale === 'sizes' &&
           !config?.tokens[token_scale]?.hasOwnProperty(splitCurrentToken[0])
         ) {
           modifiedTokenScale = 'space';
         }
-
+        if (token_scale === 'colors') {
+          splitCurrentToken = splitCurrentToken[0].split('.');
+          if (splitCurrentToken.length > 1) {
+            shade = Number(splitCurrentToken[1]);
+          }
+        }
         if (
           config?.tokens[modifiedTokenScale] &&
           config?.tokens[modifiedTokenScale].hasOwnProperty(
@@ -91,8 +98,12 @@ export function resolveStringToken(
           const tokenValue =
             config?.tokens?.[modifiedTokenScale]?.[splitCurrentToken[0]];
           typeofResult = typeof tokenValue;
-
+          // console.log({ string, propName, tokenValue });
           if (typeof tokenValue !== 'undefined' && tokenValue !== null) {
+            if (token_scale === 'colors') {
+              shade = props.shade ?? shade;
+              return tokenValue[shade];
+            }
             return tokenValue;
           } else {
             return '';
@@ -118,7 +129,12 @@ export function resolveStringToken(
   }
 }
 
-export const getTokenFromConfig = (config: any, prop: any, value: any) => {
+export const getTokenFromConfig = (
+  config: any,
+  prop: any,
+  value: any,
+  props: any
+) => {
   const aliasTokenType = config.propertyTokenMap[prop];
 
   let IsNegativeToken = false;
@@ -137,7 +153,14 @@ export const getTokenFromConfig = (config: any, prop: any, value: any) => {
         resolveStringToken(value1, config, config.propertyTokenMap, prop, scale)
       );
     } else {
-      token = resolveStringToken(value, config, config.propertyTokenMap, prop);
+      token = resolveStringToken(
+        value,
+        config,
+        config.propertyTokenMap,
+        prop,
+        undefined,
+        props
+      );
     }
   } else {
     if (config.propertyResolver?.[prop]) {
@@ -176,8 +199,7 @@ export function getResolvedTokenValueFromConfig(
   prop: any,
   value: any
 ) {
-  console.log(prop, value);
-  let resolvedTokenValue = getTokenFromConfig(config, prop, value);
+  let resolvedTokenValue = getTokenFromConfig(config, prop, value, _props);
 
   // Special case for token ends with em on mobile
   // This will work for lineHeight and letterSpacing

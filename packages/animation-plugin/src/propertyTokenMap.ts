@@ -1,5 +1,5 @@
 const borderStyles = 'borderStyles';
-const borderWidths = 'borderWidths';
+const borderWidth = 'borderWidth';
 const colors = 'colors';
 const mediaQueries = 'mediaQueries';
 const opacity = 'opacity';
@@ -156,11 +156,11 @@ export const propertyTokenMap = {
   gridTemplateColumns: space,
   gridTemplateRows: space,
 
-  borderWidth: borderWidths,
-  borderTopWidth: borderWidths,
-  borderRightWidth: borderWidths,
-  borderBottomWidth: borderWidths,
-  borderLeftWidth: borderWidths,
+  borderWidth: borderWidth,
+  borderTopWidth: borderWidth,
+  borderRightWidth: borderWidth,
+  borderBottomWidth: borderWidth,
+  borderLeftWidth: borderWidth,
 
   borderStyle: borderStyles,
   borderTopStyle: borderStyles,

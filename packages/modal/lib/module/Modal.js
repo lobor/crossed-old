@@ -1,12 +1,13 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-/* eslint-disable react-native/no-inline-styles */
-import React, { forwardRef } from 'react';
-import { View } from 'react-native';
-import { useControllableState, useKeyboardBottomInset } from '@crossed/hooks';
-import { ModalContext } from './Context';
-import { Overlay } from '@crossed/overlay';
-const Modal = StyledModal => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
+import React, { forwardRef } from "react";
+import { View } from "react-native";
+import {
+  useControllableState,
+  useKeyboardBottomInset
+} from "@crossed/hooks";
+import { ModalContext } from "./Context";
+import { Overlay } from "@crossed/overlay";
+const Modal = (StyledModal) => forwardRef(
+  ({
     children,
     isOpen,
     onClose,
@@ -19,58 +20,67 @@ const Modal = StyledModal => /*#__PURE__*/forwardRef((_ref, ref) => {
     unmountOnExit = true,
     _experimentalOverlay = true,
     ...props
-  } = _ref;
-  const bottomInset = useKeyboardBottomInset();
-  const {
-    useRNModal,
-    ...remainingProps
-  } = props;
-  const [visible, setVisible] = useControllableState({
-    value: defaultIsOpen ?? isOpen,
-    onChange: val => {
-      if (!val) onClose && onClose();
-    }
-  });
-  const handleClose = React.useCallback(() => {
-    setVisible(false);
-  }, [setVisible]);
-  const avoidKeyboardSpacer = /*#__PURE__*/React.createElement(View, {
-    style: {
-      // @ts-ignore
-      pointerEvents: 'box-none',
-      width: '100%',
-      height: avoidKeyboard ? bottomInset : undefined
-    }
-  });
-  const contextValue = React.useMemo(() => {
-    return {
+  }, ref) => {
+    const bottomInset = useKeyboardBottomInset();
+    const { useRNModal, ...remainingProps } = props;
+    const [visible, setVisible] = useControllableState({
+      value: defaultIsOpen ?? isOpen,
+      onChange: (val) => {
+        if (!val)
+          onClose && onClose();
+      }
+    });
+    const handleClose = React.useCallback(() => {
+      setVisible(false);
+    }, [setVisible]);
+    const avoidKeyboardSpacer = /* @__PURE__ */ React.createElement(
+      View,
+      {
+        style: {
+          // @ts-ignore
+          pointerEvents: "box-none",
+          width: "100%",
+          height: avoidKeyboard ? bottomInset : void 0
+        }
+      }
+    );
+    const contextValue = React.useMemo(() => {
+      return {
+        handleClose,
+        initialFocusRef,
+        finalFocusRef,
+        closeOnOverlayClick,
+        visible,
+        avoidKeyboard,
+        bottomInset
+      };
+    }, [
       handleClose,
       initialFocusRef,
-      finalFocusRef,
       closeOnOverlayClick,
-      visible,
+      finalFocusRef,
       avoidKeyboard,
-      bottomInset
-    };
-  }, [handleClose, initialFocusRef, closeOnOverlayClick, finalFocusRef, avoidKeyboard, bottomInset, visible]);
-  if (!_experimentalOverlay) {
-    return /*#__PURE__*/React.createElement(ModalContext.Provider, {
-      value: contextValue
-    }, /*#__PURE__*/React.createElement(StyledModal, _extends({}, remainingProps, {
-      ref: ref
-    }), children, avoidKeyboard ? avoidKeyboardSpacer : null));
+      bottomInset,
+      visible
+    ]);
+    if (!_experimentalOverlay) {
+      return /* @__PURE__ */ React.createElement(ModalContext.Provider, { value: contextValue }, /* @__PURE__ */ React.createElement(StyledModal, { ...remainingProps, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null));
+    }
+    return /* @__PURE__ */ React.createElement(
+      Overlay,
+      {
+        isOpen: visible,
+        onRequestClose: handleClose,
+        isKeyboardDismissable,
+        useRNModal,
+        unmountOnExit
+      },
+      /* @__PURE__ */ React.createElement(ModalContext.Provider, { value: contextValue }, /* @__PURE__ */ React.createElement(StyledModal, { ...remainingProps, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null))
+    );
   }
-  return /*#__PURE__*/React.createElement(Overlay, {
-    isOpen: visible,
-    onRequestClose: handleClose,
-    isKeyboardDismissable: isKeyboardDismissable,
-    useRNModal: useRNModal,
-    unmountOnExit: unmountOnExit
-  }, /*#__PURE__*/React.createElement(ModalContext.Provider, {
-    value: contextValue
-  }, /*#__PURE__*/React.createElement(StyledModal, _extends({}, remainingProps, {
-    ref: ref
-  }), children, avoidKeyboard ? avoidKeyboardSpacer : null)));
-});
-export default Modal;
+);
+var Modal_default = Modal;
+export {
+  Modal_default as default
+};
 //# sourceMappingURL=Modal.js.map

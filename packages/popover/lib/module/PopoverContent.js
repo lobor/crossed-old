@@ -1,23 +1,15 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-import { useKeyboardDismissable } from '@crossed/hooks';
-import { usePopover } from './PopoverContext';
-import { Platform, findNodeHandle, AccessibilityInfo } from 'react-native';
-import { mergeRefs } from '@crossed/utils';
-import { useOverlayPosition } from '@react-native-aria/overlays';
-import { OverlayAnimatePresence } from './OverlayAnimatePresence';
-import { FocusScope } from '@react-native-aria/focus';
-import { useDialog } from '@react-native-aria/dialog';
-import { PopoverContentProvider } from './PopoverContext';
-const PopoverContent = (StyledPopoverContent, AnimatePresence) => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
-    children,
-    style,
-    ...props
-  } = _ref;
-  const {
-    value
-  } = usePopover('PopoverContext');
+import React, { forwardRef } from "react";
+import { useKeyboardDismissable } from "@crossed/hooks";
+import { usePopover } from "./PopoverContext";
+import { Platform, findNodeHandle, AccessibilityInfo } from "react-native";
+import { mergeRefs } from "@crossed/utils";
+import { useOverlayPosition } from "@react-native-aria/overlays";
+import { OverlayAnimatePresence } from "./OverlayAnimatePresence";
+import { FocusScope } from "@react-native-aria/focus";
+import { useDialog } from "@react-native-aria/dialog";
+import { PopoverContentProvider } from "./PopoverContext";
+const PopoverContent = (StyledPopoverContent, AnimatePresence) => forwardRef(({ children, style, ...props }, ref) => {
+  const { value } = usePopover("PopoverContext");
   const {
     targetRef,
     initialFocusRef,
@@ -45,14 +37,12 @@ const PopoverContent = (StyledPopoverContent, AnimatePresence) => /*#__PURE__*/f
       }
     }
   }, [isOpen, contentRef]);
-  const {
-    dialogProps
-  } = useDialog({
-    initialFocusRef,
-    ...props
-  }, contentRef);
+  const { dialogProps } = useDialog(
+    { initialFocusRef, ...props },
+    contentRef
+  );
   React.useEffect(() => {
-    const finalFocusRefCurrentVal = finalFocusRef === null || finalFocusRef === void 0 ? void 0 : finalFocusRef.current;
+    const finalFocusRefCurrentVal = finalFocusRef == null ? void 0 : finalFocusRef.current;
     if (initialFocusRef && initialFocusRef.current) {
       initialFocusRef.current.focus();
     }
@@ -66,21 +56,14 @@ const PopoverContent = (StyledPopoverContent, AnimatePresence) => /*#__PURE__*/f
     enabled: true,
     callback: handleClose
   });
-  const accessibilityProps = Platform.OS === 'web' ? {
-    'accessibilityRole': 'dialog',
-    'aria-labelledby': headerMounted ? headerId : undefined,
-    'aria-describedby': bodyMounted ? bodyId : undefined
+  const accessibilityProps = Platform.OS === "web" ? {
+    "accessibilityRole": "dialog",
+    "aria-labelledby": headerMounted ? headerId : void 0,
+    "aria-describedby": bodyMounted ? bodyId : void 0
   } : {};
   const overlayRef = React.useRef(null);
-  // const { x, y, reference, floating, strategy } = useFloating({
-  //   placement: placement,
-  //   middleware: [offset(10), flip(), shift()],
-  //   ...floatingParams,
-  // });
-  const {
-    overlayProps
-  } = useOverlayPosition({
-    placement: placement,
+  const { overlayProps } = useOverlayPosition({
+    placement,
     targetRef,
     overlayRef,
     crossOffset,
@@ -89,29 +72,35 @@ const PopoverContent = (StyledPopoverContent, AnimatePresence) => /*#__PURE__*/f
     shouldFlip
   });
   const mergedRef = mergeRefs([ref, overlayRef, contentRef]);
-  return /*#__PURE__*/React.createElement(PopoverContentProvider, {
-    value: value
-  }, /*#__PURE__*/React.createElement(OverlayAnimatePresence, {
-    visible: isOpen,
-    AnimatePresence: AnimatePresence
-  }, /*#__PURE__*/React.createElement(StyledPopoverContent, _extends({
-    nativeID: popoverContentId
-  }, accessibilityProps, props, {
-    ref: mergedRef,
-    isOpen: isOpen,
-    collapsable: false
-  }, dialogProps, {
-    focusable: Platform.OS === 'web' ? false : undefined,
-    style: {
-      position: 'absolute',
-      ...(overlayProps === null || overlayProps === void 0 ? void 0 : overlayProps.style),
-      ...style
-    }
-  }), /*#__PURE__*/React.createElement(FocusScope, {
-    contain: trapFocus,
-    restoreFocus: true,
-    autoFocus: true
-  }, children))));
+  return /* @__PURE__ */ React.createElement(PopoverContentProvider, { value }, /* @__PURE__ */ React.createElement(
+    OverlayAnimatePresence,
+    {
+      visible: isOpen,
+      AnimatePresence
+    },
+    /* @__PURE__ */ React.createElement(
+      StyledPopoverContent,
+      {
+        nativeID: popoverContentId,
+        ...accessibilityProps,
+        ...props,
+        ref: mergedRef,
+        isOpen,
+        collapsable: false,
+        ...dialogProps,
+        focusable: Platform.OS === "web" ? false : void 0,
+        style: {
+          position: "absolute",
+          ...overlayProps == null ? void 0 : overlayProps.style,
+          ...style
+        }
+      },
+      /* @__PURE__ */ React.createElement(FocusScope, { contain: trapFocus, restoreFocus: true, autoFocus: true }, children)
+    )
+  ));
 });
-export default PopoverContent;
+var PopoverContent_default = PopoverContent;
+export {
+  PopoverContent_default as default
+};
 //# sourceMappingURL=PopoverContent.js.map

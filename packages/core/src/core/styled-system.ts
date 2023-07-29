@@ -51,6 +51,7 @@ export const CSSPropertiesMap = {
   top: 'auto',
   width: 'auto',
   zIndex: 'auto',
+  shade: '9',
   shadowColor: 'transparent',
   shadowOffset: '0px 0px',
   shadowOpacity: '0',

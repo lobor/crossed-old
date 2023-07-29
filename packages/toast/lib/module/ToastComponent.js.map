@@ -1,1 +1,6 @@
-{"version":3,"names":["React","forwardRef","ToastComponent","StyledToast","_ref","ref","children","props","createElement","_extends"],"sourceRoot":"../../src","sources":["ToastComponent.tsx"],"mappings":";AAAA,OAAOA,KAAK,IAAIC,UAAU,QAAQ,OAAO;AAEzC,OAAO,SAASC,cAAcA,CAC5BC,WAAkD,EAClD;EACA,oBAAOF,UAAU,CACf,CAAAG,IAAA,EAEEC,GAAS,KACN;IAAA,IAFH;MAAEC,QAAQ;MAAE,GAAGC;IAA6C,CAAC,GAAAH,IAAA;IAG7D,oBACEJ,KAAA,CAAAQ,aAAA,CAACL,WAAW,EAAAM,QAAA,KAAMF,KAAK;MAAuBF,GAAG,EAAEA;IAAI,IACpDC,QACU,CAAC;EAElB,CACF,CAAC;AACH"}
+{
+  "version": 3,
+  "sources": ["../../src/ToastComponent.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAE3B,SAAS,eACd,aACA;AACA,SAAO;AAAA,IACL,CACE,EAAE,UAAU,GAAG,MAAM,GACrB,QACG;AACH,aACE,oCAAC,eAAa,GAAI,OAA4B,OAC3C,QACH;AAAA,IAEJ;AAAA,EACF;AACF;",
+  "names": []
+}

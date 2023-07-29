@@ -1,12 +1,14 @@
-import { Stack as StackMain } from './Stack';
-export function createStack(_ref) {
-  let {
-    Root,
-    HSpacer,
-    VSpacer
-  } = _ref;
+import { Stack as StackMain } from "./Stack";
+function createStack({
+  Root,
+  HSpacer,
+  VSpacer
+}) {
   const Stack = StackMain(Root, HSpacer, VSpacer);
-  Stack.displayName = 'Stack';
+  Stack.displayName = "Stack";
   return Stack;
 }
+export {
+  createStack
+};
 //# sourceMappingURL=index.js.map

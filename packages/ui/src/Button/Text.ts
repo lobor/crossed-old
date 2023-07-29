@@ -8,6 +8,7 @@ export const Text = styled(
     fontFamily: '$body',
     //@ts-ignore
     userSelect: 'none',
+    shade: 0,
   },
   { ancestorStyle: ['_text'], DEBUG: 'STYLEDBUTTONTEXT' }
 );

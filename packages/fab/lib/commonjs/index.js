@@ -1,24 +1,53 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var src_exports = {};
+__export(src_exports, {
+  createFab: () => createFab
 });
-exports.createFab = createFab;
-var _Fab = _interopRequireDefault(require("./Fab"));
-var _FabLabel = _interopRequireDefault(require("./FabLabel"));
-var _FabIcon = require("./FabIcon");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function createFab(_ref) {
-  let {
-    Root,
-    Label,
-    Icon
-  } = _ref;
-  const Fab = (0, _Fab.default)(Root);
-  Fab.Label = (0, _FabLabel.default)(Label);
-  Fab.Icon = (0, _FabIcon.FabIcon)(Icon);
-  Fab.displayName = 'Fab';
-  Fab.Icon.displayName = 'Fab.Icon';
+module.exports = __toCommonJS(src_exports);
+var import_Fab = __toESM(require("./Fab"));
+var import_FabLabel = __toESM(require("./FabLabel"));
+var import_FabIcon = require("./FabIcon");
+function createFab({
+  Root,
+  Label,
+  Icon
+}) {
+  const Fab = (0, import_Fab.default)(Root);
+  Fab.Label = (0, import_FabLabel.default)(Label);
+  Fab.Icon = (0, import_FabIcon.FabIcon)(Icon);
+  Fab.displayName = "Fab";
+  Fab.Icon.displayName = "Fab.Icon";
   return Fab;
 }
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  createFab
+});
 //# sourceMappingURL=index.js.map

@@ -1,35 +1,48 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Fade", {
-  enumerable: true,
-  get: function () {
-    return _Fade.default;
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var src_exports = {};
+__export(src_exports, {
+  Fade: () => import_Fade.default,
+  PresenceTransition: () => import_PresenceTransition.default,
+  Slide: () => import_Slide.default,
+  Stagger: () => import_Stagger.default
 });
-Object.defineProperty(exports, "PresenceTransition", {
-  enumerable: true,
-  get: function () {
-    return _PresenceTransition.default;
-  }
+module.exports = __toCommonJS(src_exports);
+var import_Fade = __toESM(require("./Fade"));
+var import_Slide = __toESM(require("./Slide"));
+var import_PresenceTransition = __toESM(require("./PresenceTransition"));
+var import_Stagger = __toESM(require("./Stagger"));
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  Fade,
+  PresenceTransition,
+  Slide,
+  Stagger
 });
-Object.defineProperty(exports, "Slide", {
-  enumerable: true,
-  get: function () {
-    return _Slide.default;
-  }
-});
-Object.defineProperty(exports, "Stagger", {
-  enumerable: true,
-  get: function () {
-    return _Stagger.default;
-  }
-});
-var _Fade = _interopRequireDefault(require("./Fade"));
-var _Slide = _interopRequireDefault(require("./Slide"));
-var _PresenceTransition = _interopRequireDefault(require("./PresenceTransition"));
-var _Stagger = _interopRequireDefault(require("./Stagger"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 //# sourceMappingURL=index.js.map

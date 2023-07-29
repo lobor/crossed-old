@@ -1,13 +1,9 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-const AvatarGroup = StyledAvatarGroup => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
-    children,
-    ...props
-  } = _ref;
-  return /*#__PURE__*/React.createElement(StyledAvatarGroup, _extends({
-    ref: ref
-  }, props), [...children].flat(Infinity).reverse());
+import React, { forwardRef } from "react";
+const AvatarGroup = (StyledAvatarGroup) => forwardRef(({ children, ...props }, ref) => {
+  return /* @__PURE__ */ React.createElement(StyledAvatarGroup, { ref, ...props }, [...children].flat(Infinity).reverse());
 });
-export default AvatarGroup;
+var AvatarGroup_default = AvatarGroup;
+export {
+  AvatarGroup_default as default
+};
 //# sourceMappingURL=AvatarGroup.js.map

@@ -1,5 +1,7 @@
 /// <reference types="react" />
 export * from './Button';
+export * from './HStack';
+export * from './VStack';
 export declare const CrossedProvider: (props: {
     config: any;
     colorMode?: import("@crossed/core/lib/typescript/types").COLORMODES | undefined;

@@ -1,45 +1,65 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var SelectInput_exports = {};
+__export(SelectInput_exports, {
+  SelectInput: () => SelectInput
 });
-exports.SelectInput = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _SelectContext = require("./SelectContext");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const SelectInput = StyledSelectInput => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
-    placeholder: placeholderProp,
-    ...props
-  } = _ref;
-  const {
-    setValue,
-    value,
-    label,
-    isDisabled,
-    placeholder,
-    setPlaceholder
-  } = _react.default.useContext(_SelectContext.SelectContext);
-  (0, _react.useEffect)(() => {
+module.exports = __toCommonJS(SelectInput_exports);
+var import_react = __toESM(require("react"));
+var import_SelectContext = require("./SelectContext");
+const SelectInput = (StyledSelectInput) => (0, import_react.forwardRef)(({ placeholder: placeholderProp, ...props }, ref) => {
+  const { setValue, value, label, isDisabled, placeholder, setPlaceholder } = import_react.default.useContext(import_SelectContext.SelectContext);
+  (0, import_react.useEffect)(() => {
     setPlaceholder && setPlaceholder(placeholderProp);
   }, [placeholderProp, setPlaceholder]);
-  return /*#__PURE__*/_react.default.createElement(StyledSelectInput, _extends({
-    ref: ref,
-    states: {
-      disabled: isDisabled
-    },
-    disabled: isDisabled,
-    "aria-hidden": true,
-    editable: false,
-    focusable: false,
-    importantForAccessibility: "no",
-    placeholder: placeholder,
-    value: label ? label : value ? value : '',
-    pointerEvents: "none",
-    onChangeText: text => setValue(text)
-  }, props));
+  return /* @__PURE__ */ import_react.default.createElement(
+    StyledSelectInput,
+    {
+      ref,
+      states: {
+        disabled: isDisabled
+      },
+      disabled: isDisabled,
+      "aria-hidden": true,
+      editable: false,
+      focusable: false,
+      importantForAccessibility: "no",
+      placeholder,
+      value: label ? label : value ? value : "",
+      pointerEvents: "none",
+      onChangeText: (text) => setValue(text),
+      ...props
+    }
+  );
 });
-exports.SelectInput = SelectInput;
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  SelectInput
+});
 //# sourceMappingURL=SelectInput.js.map

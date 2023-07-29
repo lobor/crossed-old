@@ -1,10 +1,7 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// @ts-nocheck
-import React, { forwardRef, memo } from 'react';
-import { Overlay } from '@crossed/overlay';
-import PresenceTransition from './PresenceTransition';
-import { View } from 'react-native';
+import React, { forwardRef, memo } from "react";
+import { Overlay } from "@crossed/overlay";
+import PresenceTransition from "./PresenceTransition";
+import { View } from "react-native";
 const holderStyle = {
   top: {
     top: 0,
@@ -27,89 +24,99 @@ const holderStyle = {
     top: 0
   }
 };
-export const Slide = /*#__PURE__*/memo( /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
-    children,
-    ...props
-  } = _ref;
-  const {
-    in: visible,
-    placement = 'bottom',
-    overlay = true,
-    duration = 500,
-    ...resolvedProps
-  } = props;
-  const [containerOpacity, setContainerOpacity] = React.useState(0);
-  const [size, setSize] = React.useState(0);
-  const provideSize = layoutSize => {
-    if (placement === 'right' || placement === 'left') setSize(layoutSize.width);else setSize(layoutSize.height);
-    setContainerOpacity(1);
-  };
-  const transition = {
-    duration
-  };
-  const animationStyle = {
-    top: {
-      initial: {
-        translateY: -size
+const Slide = memo(
+  forwardRef(({ children, ...props }, ref) => {
+    const {
+      in: visible,
+      placement = "bottom",
+      overlay = true,
+      duration = 500,
+      ...resolvedProps
+    } = props;
+    const [containerOpacity, setContainerOpacity] = React.useState(0);
+    const [size, setSize] = React.useState(0);
+    const provideSize = (layoutSize) => {
+      if (placement === "right" || placement === "left")
+        setSize(layoutSize.width);
+      else
+        setSize(layoutSize.height);
+      setContainerOpacity(1);
+    };
+    const transition = { duration };
+    const animationStyle = {
+      top: {
+        initial: {
+          translateY: -size
+        },
+        animate: {
+          translateY: 0,
+          transition
+        }
       },
-      animate: {
-        translateY: 0,
-        transition
+      bottom: {
+        initial: {
+          translateY: size
+        },
+        animate: {
+          translateY: 0,
+          transition
+        },
+        exit: {
+          translateY: size,
+          transition
+        }
+      },
+      left: {
+        initial: {
+          translateX: -size
+        },
+        animate: {
+          translateX: 0,
+          transition
+        }
+      },
+      right: {
+        initial: {
+          translateX: size
+        },
+        animate: {
+          translateX: 0,
+          transition
+        }
       }
-    },
-    bottom: {
-      initial: {
-        translateY: size
+    };
+    const slideComponent = /* @__PURE__ */ React.createElement(
+      PresenceTransition,
+      {
+        visible,
+        ...animationStyle[placement],
+        style: [
+          { position: "absolute" },
+          holderStyle[placement],
+          { height: "100%" }
+        ]
       },
-      animate: {
-        translateY: 0,
-        transition
-      },
-      exit: {
-        translateY: size,
-        transition
-      }
-    },
-    left: {
-      initial: {
-        translateX: -size
-      },
-      animate: {
-        translateX: 0,
-        transition
-      }
-    },
-    right: {
-      initial: {
-        translateX: size
-      },
-      animate: {
-        translateX: 0,
-        transition
-      }
+      /* @__PURE__ */ React.createElement(
+        View,
+        {
+          ...resolvedProps,
+          opacity: containerOpacity,
+          ref,
+          onLayout: (e) => provideSize(e.nativeEvent.layout)
+        },
+        size ? children : null
+      )
+    );
+    if (overlay) {
+      return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(Overlay, { isKeyboardDismissable: false }, slideComponent));
+    } else {
+      return slideComponent;
     }
-  };
-  const slideComponent = /*#__PURE__*/React.createElement(PresenceTransition, _extends({
-    visible: visible
-  }, animationStyle[placement], {
-    style: [{
-      position: 'absolute'
-    }, holderStyle[placement], {
-      height: '100%'
-    }]
-  }), /*#__PURE__*/React.createElement(View, _extends({}, resolvedProps, {
-    opacity: containerOpacity,
-    ref: ref,
-    onLayout: e => provideSize(e.nativeEvent.layout)
-  }), size ? children : null));
-  if (overlay) {
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Overlay, {
-      isKeyboardDismissable: false
-    }, slideComponent));
-  } else {
-    return slideComponent;
-  }
-}));
-export default Slide;
+  })
+);
+var Slide_default = Slide;
+export {
+  Slide,
+  Slide_default as default
+};
 //# sourceMappingURL=Slide.js.map

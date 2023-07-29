@@ -1,13 +1,22 @@
-import { createContext } from 'react';
-export const ToastContext = /*#__PURE__*/createContext({
+import { createContext } from "react";
+const ToastContext = createContext({
   toastInfo: {},
-  setToastInfo: () => {},
-  setToast: () => {},
-  removeToast: () => {},
-  hideAll: () => {},
+  setToastInfo: () => {
+  },
+  setToast: () => {
+  },
+  removeToast: () => {
+  },
+  hideAll: () => {
+  },
   isActive: () => false,
   visibleToasts: {},
-  setVisibleToasts: () => {},
-  hideToast: () => {}
+  setVisibleToasts: () => {
+  },
+  hideToast: () => {
+  }
 });
+export {
+  ToastContext
+};
 //# sourceMappingURL=ToastContext.js.map

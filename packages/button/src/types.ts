@@ -21,6 +21,11 @@ export interface InterfaceButtonProps extends PressableProps {
    * If true, the button will be disabled.
    */
   isDisabled?: boolean;
+
+  /**
+   * Select shade of colors palette.
+   */
+  shade?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 }
 
 export interface IButtonGroupProps {

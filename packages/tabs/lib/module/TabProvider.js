@@ -1,3 +1,7 @@
-import { createContext } from '@crossed/utils';
-export const [TabProvider, useTab] = createContext('TabContext');
+import { createContext } from "@crossed/utils";
+const [TabProvider, useTab] = createContext("TabContext");
+export {
+  TabProvider,
+  useTab
+};
 //# sourceMappingURL=TabProvider.js.map

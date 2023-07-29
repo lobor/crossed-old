@@ -1,1 +1,6 @@
-{"version":3,"names":["React","SelectContext","createContext","SelectPortalContext"],"sourceRoot":"../../src","sources":["SelectContext.ts"],"mappings":"AAAA,OAAOA,KAAK,MAAM,OAAO;AAEzB,OAAO,MAAMC,aAAa,gBAAGD,KAAK,CAACE,aAAa,CAAM,CAAC,CAAC,CAAC;AACzD,OAAO,MAAMC,mBAAmB,gBAAGH,KAAK,CAACE,aAAa,CAAM,CAAC,CAAC,CAAC"}
+{
+  "version": 3,
+  "sources": ["../../src/SelectContext.ts"],
+  "mappings": "AAAA,OAAO,WAAW;AAEX,MAAM,gBAAgB,MAAM,cAAmB,CAAC,CAAC;AACjD,MAAM,sBAAsB,MAAM,cAAmB,CAAC,CAAC;",
+  "names": []
+}

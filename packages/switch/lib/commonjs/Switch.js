@@ -1,20 +1,44 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Switch_exports = {};
+__export(Switch_exports, {
+  Switch: () => Switch
 });
-exports.Switch = Switch;
-var _react = _interopRequireWildcard(require("react"));
-var _interactions = require("@react-native-aria/interactions");
-var _toggle = require("@react-stately/toggle");
-var _formControl = require("@crossed/form-control");
-var _utils = require("@crossed/utils");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+module.exports = __toCommonJS(Switch_exports);
+var import_react = __toESM(require("react"));
+var import_interactions = require("@react-native-aria/interactions");
+var import_toggle = require("@react-stately/toggle");
+var import_form_control = require("@crossed/form-control");
+var import_utils = require("@crossed/utils");
 function Switch(StyledSwitch) {
-  return /*#__PURE__*/(0, _react.forwardRef)((_ref2, ref) => {
-    let {
+  return (0, import_react.forwardRef)(
+    ({
       disabled,
       isDisabled,
       isInvalid,
@@ -25,39 +49,42 @@ function Switch(StyledSwitch) {
       value,
       onValueChange,
       ...props
-    } = _ref2;
-    const formControlContext = (0, _formControl.useFormControlContext)();
-    const combinedProps = {
-      ...formControlContext,
-      ...props
-    };
-    const state = (0, _toggle.useToggleState)({
-      defaultSelected: !(defaultValue === null || defaultValue === undefined) ? defaultValue : !(value === null || value === undefined) ? value : false
-    });
-    const checked = !(value === null || value === undefined) ? value : state.isSelected;
-    const _ref = _react.default.useRef(null);
-    const {
-      isHovered
-    } = (0, _interactions.useHover)({}, _ref);
-    const mergedRef = (0, _utils.mergeRefs)([ref, _ref]);
-    return /*#__PURE__*/_react.default.createElement(StyledSwitch, _extends({
-      states: {
-        hover: isHovered,
-        disabled: disabled || isDisabled || combinedProps.isDisabled,
-        invalid: isInvalid || combinedProps.isInvalid,
-        checked: value || checked
-      },
-      accessibilityLabel: accessibilityLabel,
-      accessibilityHint: accessibilityHint,
-      disabled: disabled || isDisabled || combinedProps.isDisabled,
-      onValueChange: val => {
-        onValueChange && onValueChange(val);
-        onToggle ? onToggle(val) : state.toggle();
-      },
-      value: value || checked
-    }, combinedProps, {
-      ref: mergedRef
-    }));
-  });
+    }, ref) => {
+      const formControlContext = (0, import_form_control.useFormControlContext)();
+      const combinedProps = { ...formControlContext, ...props };
+      const state = (0, import_toggle.useToggleState)({
+        defaultSelected: !(defaultValue === null || defaultValue === void 0) ? defaultValue : !(value === null || value === void 0) ? value : false
+      });
+      const checked = !(value === null || value === void 0) ? value : state.isSelected;
+      const _ref = import_react.default.useRef(null);
+      const { isHovered } = (0, import_interactions.useHover)({}, _ref);
+      const mergedRef = (0, import_utils.mergeRefs)([ref, _ref]);
+      return /* @__PURE__ */ import_react.default.createElement(
+        StyledSwitch,
+        {
+          states: {
+            hover: isHovered,
+            disabled: disabled || isDisabled || combinedProps.isDisabled,
+            invalid: isInvalid || combinedProps.isInvalid,
+            checked: value || checked
+          },
+          accessibilityLabel,
+          accessibilityHint,
+          disabled: disabled || isDisabled || combinedProps.isDisabled,
+          onValueChange: (val) => {
+            onValueChange && onValueChange(val);
+            onToggle ? onToggle(val) : state.toggle();
+          },
+          value: value || checked,
+          ...combinedProps,
+          ref: mergedRef
+        }
+      );
+    }
+  );
 }
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  Switch
+});
 //# sourceMappingURL=Switch.js.map

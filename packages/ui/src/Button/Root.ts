@@ -12,7 +12,8 @@ export const Root = styled(
 
     '_text': {
       color: '$color',
-      fontWeight: '$semibold',
+      shade: 0,
+      fontWeight: '$bold',
     },
 
     '_icon': {
@@ -34,6 +35,29 @@ export const Root = styled(
     },
 
     'variants': {
+      colors: {
+        red: {
+          borderColor: '$red',
+          backgroundColor: '$red',
+          _text: {
+            color: '$red',
+          },
+        },
+        green: {
+          borderColor: '$green.5',
+          backgroundColor: '$green.5',
+          _text: {
+            color: '$green.5',
+          },
+        },
+        gray: {
+          borderColor: '$gray.5',
+          backgroundColor: '$gray.5',
+          _text: {
+            color: '$gray.5',
+          },
+        },
+      },
       // action: {
       //   primary: {
       //     'backgroundColor': '$background',
@@ -417,16 +441,25 @@ export const Root = styled(
       // },
 
       variant: {
-        default: {},
-        filled: {},
+        // default: {},
+        filled: {
+          _text: {
+            color: 'white',
+          },
+        },
         outlined: {
-          'backgroundColor': '$red1',
+          'backgroundColor': '$gray.8',
+          // @ts-ignore
+          'borderWidth': 2,
           ':hover': {
             backgroundColor: '$backgroundHover',
           },
           ':active': {
             backgroundColor: '$backgroundPress',
           },
+          // '_text': {
+          //   color: 'white',
+          // },
           // '_dark': {
           //   'backgroundColor': 'transparent',
           //   ':hover': {

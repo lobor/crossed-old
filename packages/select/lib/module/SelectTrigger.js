@@ -1,14 +1,8 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-import { SelectContext } from './SelectContext';
-import { mergeRefs } from '@crossed/utils';
-import { Keyboard } from 'react-native';
-export const SelectTrigger = StyledSelectTrigger => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
-    children,
-    accessibilityLabel,
-    ...props
-  } = _ref;
+import React, { forwardRef } from "react";
+import { SelectContext } from "./SelectContext";
+import { mergeRefs } from "@crossed/utils";
+import { Keyboard } from "react-native";
+const SelectTrigger = (StyledSelectTrigger) => forwardRef(({ children, accessibilityLabel, ...props }, ref) => {
   const {
     isDisabled,
     hoverRef,
@@ -20,26 +14,34 @@ export const SelectTrigger = StyledSelectTrigger => /*#__PURE__*/forwardRef((_re
     isInvalid,
     isReadOnly
   } = React.useContext(SelectContext);
-  return /*#__PURE__*/React.createElement(StyledSelectTrigger, _extends({
-    onPress: () => {
-      if (!isReadOnly) {
-        Keyboard.dismiss();
-        setIsOpen(true);
-        onOpen && onOpen();
-      }
-    },
-    states: {
-      focus: isFocused,
-      focusVisible: isFocusVisible,
-      hover: isHovered,
+  return /* @__PURE__ */ React.createElement(
+    StyledSelectTrigger,
+    {
+      onPress: () => {
+        if (!isReadOnly) {
+          Keyboard.dismiss();
+          setIsOpen(true);
+          onOpen && onOpen();
+        }
+      },
+      states: {
+        focus: isFocused,
+        focusVisible: isFocusVisible,
+        hover: isHovered,
+        disabled: isDisabled,
+        invalid: isInvalid
+      },
       disabled: isDisabled,
-      invalid: isInvalid
+      accessibilityLabel,
+      accessibilityRole: "button",
+      ref: mergeRefs([ref, hoverRef]),
+      focusable: false,
+      ...props
     },
-    disabled: isDisabled,
-    accessibilityLabel: accessibilityLabel,
-    accessibilityRole: "button",
-    ref: mergeRefs([ref, hoverRef]),
-    focusable: false
-  }, props), children);
+    children
+  );
 });
+export {
+  SelectTrigger
+};
 //# sourceMappingURL=SelectTrigger.js.map

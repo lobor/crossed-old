@@ -1,1 +1,6 @@
-{"version":3,"names":["React","forwardRef","FabLabel","StyledFabLabel","_ref","ref","children","props","createElement","_extends"],"sourceRoot":"../../src","sources":["FabLabel.tsx"],"mappings":";AAAA,OAAOA,KAAK,IAAIC,UAAU,QAAQ,OAAO;AAEzC,SAASC,QAAQA,CACfC,cAAmD,EACnD;EACA,oBAAOF,UAAU,CACf,CAAAG,IAAA,EAEEC,GAAS,KACN;IAAA,IAFH;MAAEC,QAAQ;MAAE,GAAGC;IAA2C,CAAC,GAAAH,IAAA;IAG3D,oBACEJ,KAAA,CAAAQ,aAAA,CAACL,cAAc,EAAAM,QAAA;MAACJ,GAAG,EAAEA;IAAI,GAAME,KAAK,GACjCD,QACa,CAAC;EAErB,CACF,CAAC;AACH;AACA,eAAeJ,QAAQ"}
+{
+  "version": 3,
+  "sources": ["../../src/FabLabel.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAElC,SAAS,SACP,gBACA;AACA,SAAO;AAAA,IACL,CACE,EAAE,UAAU,GAAG,MAAM,GACrB,QACG;AACH,aACE,oCAAC,kBAAe,KAAW,GAAI,SAC5B,QACH;AAAA,IAEJ;AAAA,EACF;AACF;AACA,IAAO,mBAAQ;",
+  "names": []
+}

@@ -1,1 +1,6 @@
-{"version":3,"names":["_Stack","require","createStack","_ref","Root","HSpacer","VSpacer","Stack","StackMain","displayName"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":";;;;;;AAAA,IAAAA,MAAA,GAAAC,OAAA;AAEO,SAASC,WAAWA,CAAAC,IAAA,EAYxB;EAAA,IARD;IACAC,IAAI;IACJC,OAAO;IACPC;EAKF,CAAC,GAAAH,IAAA;EACC,MAAMI,KAAK,GAAG,IAAAC,YAAS,EAACJ,IAAI,EAAEC,OAAO,EAAEC,OAAO,CAAC;EAE/CC,KAAK,CAACE,WAAW,GAAG,OAAO;EAE3B,OAAOF,KAAK;AACd"}
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,mBAAmC;AAE5B,SAAS,YAId;AAAA,EACA;AAAA,EACA;AAAA,EACA;AACF,GAIG;AACD,QAAM,YAAQ,aAAAA,OAAU,MAAM,SAAS,OAAO;AAE9C,QAAM,cAAc;AAEpB,SAAO;AACT;",
+  "names": ["StackMain"]
+}

@@ -1,1 +1,6 @@
-{"version":3,"names":["_Provider","require","createProvider","_ref","StyledProvider","CrossedStyledProvider","MainProvider","displayName","exports"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":";;;;;;;;;;;;;;;;;;AAAA,IAAAA,SAAA,GAAAC,OAAA;AAMO,MAAMC,cAAc,GAAGC,IAAA,IAIxB;EAAA,IAJ8C;IAClDC;EAGF,CAAC,GAAAD,IAAA;EACC,MAAME,qBAAqB,GAAG,IAAAC,kBAAY,EAAC;IAAEF;EAAe,CAAC,CAAQ;EACrEC,qBAAqB,CAACE,WAAW,GAAG,uBAAuB;EAC3D,OAAOF,qBAAqB;AAC9B,CAAC;AAACG,OAAA,CAAAN,cAAA,GAAAA,cAAA"}
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,sBAIO;AAEA,MAAM,iBAAiB,CAAsB;AAAA,EAClD;AACF,MAEM;AACJ,QAAM,4BAAwB,gBAAAA,UAAa,EAAE,eAAe,CAAC;AAC7D,wBAAsB,cAAc;AACpC,SAAO;AACT;",
+  "names": ["MainProvider"]
+}

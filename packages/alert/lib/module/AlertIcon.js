@@ -1,13 +1,8 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-export const AlertIcon = StyledAlertIcon => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
-    children,
-    ...props
-  } = _ref;
-  return /*#__PURE__*/React.createElement(StyledAlertIcon, _extends({
-    focusable: false,
-    ref: ref
-  }, props), children);
+import React, { forwardRef } from "react";
+const AlertIcon = (StyledAlertIcon) => forwardRef(({ children, ...props }, ref) => {
+  return /* @__PURE__ */ React.createElement(StyledAlertIcon, { focusable: false, ref, ...props }, children);
 });
+export {
+  AlertIcon
+};
 //# sourceMappingURL=AlertIcon.js.map

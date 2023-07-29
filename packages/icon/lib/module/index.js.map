@@ -1,1 +1,6 @@
-{"version":3,"names":["createIcon"],"sourceRoot":"../../src","sources":["index.tsx"],"mappings":"AAAA,SAASA,UAAU,QAAQ,cAAc"}
+{
+  "version": 3,
+  "sources": ["../../src/index.tsx"],
+  "mappings": "AAAA,SAAS,kBAAkB;",
+  "names": []
+}

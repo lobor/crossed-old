@@ -1,49 +1,41 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Circle", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.Circle;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var nbSvg_exports = {};
+__export(nbSvg_exports, {
+  Circle: () => import_react_native_svg.Circle,
+  G: () => import_react_native_svg.G,
+  Line: () => import_react_native_svg.Line,
+  Path: () => import_react_native_svg.Path,
+  Polygon: () => import_react_native_svg.Polygon,
+  Rect: () => import_react_native_svg.Rect,
+  Svg: () => import_react_native_svg.Svg
 });
-Object.defineProperty(exports, "G", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.G;
-  }
+module.exports = __toCommonJS(nbSvg_exports);
+var import_react_native_svg = require("react-native-svg");
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  Circle,
+  G,
+  Line,
+  Path,
+  Polygon,
+  Rect,
+  Svg
 });
-Object.defineProperty(exports, "Line", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.Line;
-  }
-});
-Object.defineProperty(exports, "Path", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.Path;
-  }
-});
-Object.defineProperty(exports, "Polygon", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.Polygon;
-  }
-});
-Object.defineProperty(exports, "Rect", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.Rect;
-  }
-});
-Object.defineProperty(exports, "Svg", {
-  enumerable: true,
-  get: function () {
-    return _reactNativeSvg.Svg;
-  }
-});
-var _reactNativeSvg = require("react-native-svg");
 //# sourceMappingURL=nbSvg.js.map

@@ -1,11 +1,13 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React, { forwardRef } from 'react';
-import { View } from 'react-native';
-import { AlertDialogContext } from './Context';
-import { Overlay } from '@crossed/overlay';
-import { useControllableState, useKeyboardBottomInset } from '@crossed/hooks';
-export const AlertDialog = StyledAlertDialog => /*#__PURE__*/forwardRef((_ref, ref) => {
-  let {
+import React, { forwardRef } from "react";
+import { View } from "react-native";
+import { AlertDialogContext } from "./Context";
+import { Overlay } from "@crossed/overlay";
+import {
+  useControllableState,
+  useKeyboardBottomInset
+} from "@crossed/hooks";
+const AlertDialog = (StyledAlertDialog) => forwardRef(
+  ({
     children,
     isOpen,
     onClose,
@@ -15,57 +17,72 @@ export const AlertDialog = StyledAlertDialog => /*#__PURE__*/forwardRef((_ref, r
     avoidKeyboard = false,
     closeOnOverlayClick = true,
     isKeyboardDismissable = true,
-    animationPreset = 'fade',
+    animationPreset = "fade",
     unmountOnExit = true,
     // @ts-ignore
     _experimentalOverlay = true,
     ...props
-  } = _ref;
-  const bottomInset = useKeyboardBottomInset();
-  const [visible, setVisible] = useControllableState({
-    value: isOpen,
-    defaultValue: defaultIsOpen,
-    onChange: val => {
-      if (!val) onClose && onClose();
-    }
-  });
-  const avoidKeyboardSpacer = /*#__PURE__*/React.createElement(View, {
-    style: {
-      // @ts-ignore
-      pointerEvents: 'box-none',
-      width: '100%',
-      height: avoidKeyboard ? bottomInset : undefined
-    }
-  });
-  const handleClose = React.useCallback(() => setVisible(false), [setVisible]);
-  const contextValue = React.useMemo(() => {
-    return {
+  }, ref) => {
+    const bottomInset = useKeyboardBottomInset();
+    const [visible, setVisible] = useControllableState({
+      value: isOpen,
+      defaultValue: defaultIsOpen,
+      onChange: (val) => {
+        if (!val)
+          onClose && onClose();
+      }
+    });
+    const avoidKeyboardSpacer = /* @__PURE__ */ React.createElement(
+      View,
+      {
+        style: {
+          // @ts-ignore
+          pointerEvents: "box-none",
+          width: "100%",
+          height: avoidKeyboard ? bottomInset : void 0
+        }
+      }
+    );
+    const handleClose = React.useCallback(
+      () => setVisible(false),
+      [setVisible]
+    );
+    const contextValue = React.useMemo(() => {
+      return {
+        handleClose,
+        initialFocusRef,
+        finalFocusRef,
+        closeOnOverlayClick,
+        avoidKeyboard,
+        bottomInset,
+        visible
+      };
+    }, [
       handleClose,
       initialFocusRef,
-      finalFocusRef,
       closeOnOverlayClick,
+      finalFocusRef,
       avoidKeyboard,
       bottomInset,
       visible
-    };
-  }, [handleClose, initialFocusRef, closeOnOverlayClick, finalFocusRef, avoidKeyboard, bottomInset, visible]);
-  if (!_experimentalOverlay) {
-    return /*#__PURE__*/React.createElement(AlertDialogContext.Provider, {
-      value: contextValue
-    }, /*#__PURE__*/React.createElement(StyledAlertDialog, _extends({}, props, {
-      ref: ref
-    }), children, avoidKeyboard ? avoidKeyboardSpacer : null));
+    ]);
+    if (!_experimentalOverlay) {
+      return /* @__PURE__ */ React.createElement(AlertDialogContext.Provider, { value: contextValue }, /* @__PURE__ */ React.createElement(StyledAlertDialog, { ...props, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null));
+    }
+    return /* @__PURE__ */ React.createElement(
+      Overlay,
+      {
+        isOpen: visible,
+        onRequestClose: handleClose,
+        isKeyboardDismissable,
+        animationPreset,
+        unmountOnExit
+      },
+      /* @__PURE__ */ React.createElement(AlertDialogContext.Provider, { value: contextValue }, /* @__PURE__ */ React.createElement(StyledAlertDialog, { ...props, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null))
+    );
   }
-  return /*#__PURE__*/React.createElement(Overlay, {
-    isOpen: visible,
-    onRequestClose: handleClose,
-    isKeyboardDismissable: isKeyboardDismissable,
-    animationPreset: animationPreset,
-    unmountOnExit: unmountOnExit
-  }, /*#__PURE__*/React.createElement(AlertDialogContext.Provider, {
-    value: contextValue
-  }, /*#__PURE__*/React.createElement(StyledAlertDialog, _extends({}, props, {
-    ref: ref
-  }), children, avoidKeyboard ? avoidKeyboardSpacer : null)));
-});
+);
+export {
+  AlertDialog
+};
 //# sourceMappingURL=AlertDialog.js.map

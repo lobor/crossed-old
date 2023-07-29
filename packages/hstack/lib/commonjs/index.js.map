@@ -1,1 +1,6 @@
-{"version":3,"names":["_HStack","require","createHStack","_ref","Root","Spacer","HStack","HStackMain","displayName"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":";;;;;;AAAA,IAAAA,OAAA,GAAAC,OAAA;AAEO,SAASC,YAAYA,CAAAC,IAAA,EAMzB;EAAA,IANsE;IACvEC,IAAI;IACJC;EAIF,CAAC,GAAAF,IAAA;EACC,MAAMG,MAAM,GAAG,IAAAC,cAAU,EAACH,IAAI,EAAEC,MAAM,CAAC;EAEvCC,MAAM,CAACE,WAAW,GAAG,QAAQ;EAE7B,OAAOF,MAAM;AACf"}
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "mappings": ";;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,oBAAqC;AAE9B,SAAS,aAAyD;AAAA,EACvE;AAAA,EACA;AACF,GAGG;AACD,QAAM,aAAS,cAAAA,QAAW,MAAM,MAAM;AAEtC,SAAO,cAAc;AAErB,SAAO;AACT;",
+  "names": ["HStackMain"]
+}

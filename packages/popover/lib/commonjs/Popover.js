@@ -1,18 +1,42 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Popover_exports = {};
+__export(Popover_exports, {
+  Popover: () => Popover
 });
-exports.Popover = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _hooks = require("@crossed/hooks");
-var _overlay = require("@crossed/overlay");
-var _PopoverContext = require("./PopoverContext");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } // import { useOverlayPosition } from '@react-native-aria/overlays';
-const Popover = StyledPopover => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
+module.exports = __toCommonJS(Popover_exports);
+var import_react = __toESM(require("react"));
+var import_hooks = require("@crossed/hooks");
+var import_overlay = require("@crossed/overlay");
+var import_PopoverContext = require("./PopoverContext");
+const Popover = (StyledPopover) => (0, import_react.forwardRef)(
+  ({
     onOpen,
     trigger,
     onClose,
@@ -23,7 +47,7 @@ const Popover = StyledPopover => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref)
     finalFocusRef,
     useRNModal,
     trapFocus = true,
-    placement = 'bottom',
+    placement = "bottom",
     shouldOverlapWithTrigger = false,
     crossOffset,
     offset,
@@ -32,55 +56,68 @@ const Popover = StyledPopover => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref)
     // @ts-ignore
     _experimentalOverlay = true,
     ...props
-  } = _ref;
-  const [isOpen, setIsOpen] = (0, _hooks.useControllableState)({
-    value: isOpenProp,
-    defaultValue: defaultIsOpen,
-    onChange: value => {
-      value ? onOpen && onOpen() : onClose && onClose();
-    }
-  });
-  const [bodyMounted, setBodyMounted] = _react.default.useState(false);
-  const [headerMounted, setHeaderMounted] = _react.default.useState(false);
-  var idCounter = 0;
-  function uniqueId() {
-    let prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-    var id = ++idCounter;
-    return prefix + id;
-  }
-  const id = uniqueId();
-  const popoverContentId = `${id}-content`;
-  const headerId = `${popoverContentId}-header`;
-  const bodyId = `${popoverContentId}-body`;
-  const handleOpen = _react.default.useCallback(() => {
-    setIsOpen(true);
-  }, [setIsOpen]);
-  const handleClose = _react.default.useCallback(() => {
-    setIsOpen(false);
-  }, [setIsOpen]);
-  const updatedTrigger = reference => {
-    return trigger({
-      'ref': reference,
-      'onPress': handleOpen,
-      'aria-expanded': isOpen ? true : false,
-      'aria-controls': isOpen ? popoverContentId : undefined,
-      'aria-haspopup': true
-    }, {
-      open: isOpen
+  }, ref) => {
+    const [isOpen, setIsOpen] = (0, import_hooks.useControllableState)({
+      value: isOpenProp,
+      defaultValue: defaultIsOpen,
+      onChange: (value) => {
+        value ? onOpen && onOpen() : onClose && onClose();
+      }
     });
-  };
-
-  // let floatingParams: any = {};
-
-  // if (Platform.OS === 'web') {
-  //   floatingParams = { whileElementsMounted: autoUpdate };
-  // }
-
-  const targetRef = _react.default.useRef(null);
-  const contextValue = _react.default.useMemo(() => {
-    return {
+    const [bodyMounted, setBodyMounted] = import_react.default.useState(false);
+    const [headerMounted, setHeaderMounted] = import_react.default.useState(false);
+    var idCounter = 0;
+    function uniqueId(prefix = "") {
+      var id2 = ++idCounter;
+      return prefix + id2;
+    }
+    const id = uniqueId();
+    const popoverContentId = `${id}-content`;
+    const headerId = `${popoverContentId}-header`;
+    const bodyId = `${popoverContentId}-body`;
+    const handleOpen = import_react.default.useCallback(() => {
+      setIsOpen(true);
+    }, [setIsOpen]);
+    const handleClose = import_react.default.useCallback(() => {
+      setIsOpen(false);
+    }, [setIsOpen]);
+    const updatedTrigger = (reference) => {
+      return trigger(
+        {
+          "ref": reference,
+          "onPress": handleOpen,
+          "aria-expanded": isOpen ? true : false,
+          "aria-controls": isOpen ? popoverContentId : void 0,
+          "aria-haspopup": true
+        },
+        { open: isOpen }
+      );
+    };
+    const targetRef = import_react.default.useRef(null);
+    const contextValue = import_react.default.useMemo(() => {
+      return {
+        targetRef,
+        strategy: "absolute",
+        handleClose,
+        initialFocusRef,
+        finalFocusRef,
+        popoverContentId,
+        bodyId,
+        headerId,
+        headerMounted,
+        bodyMounted,
+        setBodyMounted,
+        setHeaderMounted,
+        isOpen,
+        placement,
+        shouldOverlapWithTrigger,
+        crossOffset,
+        offset,
+        trapFocus,
+        shouldFlip
+      };
+    }, [
       targetRef,
-      strategy: 'absolute',
       handleClose,
       initialFocusRef,
       finalFocusRef,
@@ -98,26 +135,25 @@ const Popover = StyledPopover => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref)
       offset,
       trapFocus,
       shouldFlip
-    };
-  }, [targetRef, handleClose, initialFocusRef, finalFocusRef, popoverContentId, bodyId, headerId, headerMounted, bodyMounted, setBodyMounted, setHeaderMounted, isOpen, placement, shouldOverlapWithTrigger, crossOffset, offset, trapFocus, shouldFlip]);
-  if (!_experimentalOverlay) {
-    return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, updatedTrigger(targetRef), /*#__PURE__*/_react.default.createElement(_PopoverContext.PopoverProvider, {
-      value: contextValue
-    }, /*#__PURE__*/_react.default.createElement(StyledPopover, _extends({
-      ref: ref
-    }, props), children)));
+    ]);
+    if (!_experimentalOverlay) {
+      return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, updatedTrigger(targetRef), /* @__PURE__ */ import_react.default.createElement(import_PopoverContext.PopoverProvider, { value: contextValue }, /* @__PURE__ */ import_react.default.createElement(StyledPopover, { ref, ...props }, children)));
+    }
+    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, updatedTrigger(targetRef), /* @__PURE__ */ import_react.default.createElement(
+      import_overlay.Overlay,
+      {
+        isOpen,
+        onRequestClose: handleClose,
+        isKeyboardDismissable,
+        useRNModal,
+        unmountOnExit: true
+      },
+      /* @__PURE__ */ import_react.default.createElement(import_PopoverContext.PopoverProvider, { value: contextValue }, /* @__PURE__ */ import_react.default.createElement(StyledPopover, { ref, ...props }, children))
+    ));
   }
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, updatedTrigger(targetRef), /*#__PURE__*/_react.default.createElement(_overlay.Overlay, {
-    isOpen: isOpen,
-    onRequestClose: handleClose,
-    isKeyboardDismissable: isKeyboardDismissable,
-    useRNModal: useRNModal,
-    unmountOnExit: true
-  }, /*#__PURE__*/_react.default.createElement(_PopoverContext.PopoverProvider, {
-    value: contextValue
-  }, /*#__PURE__*/_react.default.createElement(StyledPopover, _extends({
-    ref: ref
-  }, props), children))));
+);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  Popover
 });
-exports.Popover = Popover;
 //# sourceMappingURL=Popover.js.map

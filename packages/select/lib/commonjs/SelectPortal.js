@@ -1,21 +1,41 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var SelectPortal_exports = {};
+__export(SelectPortal_exports, {
+  SelectPortal: () => SelectPortal
 });
-exports.SelectPortal = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _SelectContext = require("./SelectContext");
-var _reactNative = require("react-native");
-var _utils = require("@crossed/utils");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const SelectPortal = StyledSelectPortal => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
-    children,
-    ...props
-  } = _ref;
+module.exports = __toCommonJS(SelectPortal_exports);
+var import_react = __toESM(require("react"));
+var import_SelectContext = require("./SelectContext");
+var import_react_native = require("react-native");
+var import_utils = require("@crossed/utils");
+const SelectPortal = (StyledSelectPortal) => (0, import_react.forwardRef)(({ children, ...props }, ref) => {
   const {
     isOpen,
     handleClose,
@@ -34,75 +54,91 @@ const SelectPortal = StyledSelectPortal => /*#__PURE__*/(0, _react.forwardRef)((
     placeholder,
     isReadOnly,
     ...portalProps
-  } = _react.default.useContext(_SelectContext.SelectContext);
-  const tempFix = '__GluestackPlaceholder__';
-  if (_reactNative.Platform.OS !== 'web') {
-    return /*#__PURE__*/_react.default.createElement(StyledSelectPortal, _extends({
-      isOpen: isOpen,
-      onClose: handleClose,
-      closeOnOverlayClick: closeOnOverlayClick
-    }, props, {
-      ref: ref
-    }), /*#__PURE__*/_react.default.createElement(_SelectContext.SelectPortalContext.Provider, {
-      value: {
+  } = import_react.default.useContext(import_SelectContext.SelectContext);
+  const tempFix = "__GluestackPlaceholder__";
+  if (import_react_native.Platform.OS !== "web") {
+    return /* @__PURE__ */ import_react.default.createElement(
+      StyledSelectPortal,
+      {
         isOpen,
-        handleClose,
+        onClose: handleClose,
         closeOnOverlayClick,
-        isDisabled,
-        hoverRef,
-        hoverProps,
-        focusProps,
-        setValue,
-        value: value === null ? tempFix : value,
-        setLabel,
-        label,
-        isReadOnly,
-        setFocused,
-        onValueChange,
-        placeholder,
-        ...portalProps
-      }
-    }, children));
+        ...props,
+        ref
+      },
+      /* @__PURE__ */ import_react.default.createElement(
+        import_SelectContext.SelectPortalContext.Provider,
+        {
+          value: {
+            isOpen,
+            handleClose,
+            closeOnOverlayClick,
+            isDisabled,
+            hoverRef,
+            hoverProps,
+            focusProps,
+            setValue,
+            value: value === null ? tempFix : value,
+            setLabel,
+            label,
+            isReadOnly,
+            setFocused,
+            onValueChange,
+            placeholder,
+            ...portalProps
+          }
+        },
+        children
+      )
+    );
   }
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("select", _extends({
-    disabled: isDisabled || isReadOnly
-  }, focusProps, hoverProps, {
-    onChange: e => {
-      onValueChange(e.target.value);
-      setLabel(e.target.options[e.target.selectedIndex].text);
-      handleClose();
-    },
-    onKeyDown: e => {
-      if (e.code === 'Space') {
-        onOpen && onOpen();
+  return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, /* @__PURE__ */ import_react.default.createElement(
+    "select",
+    {
+      disabled: isDisabled || isReadOnly,
+      ...focusProps,
+      ...hoverProps,
+      onChange: (e) => {
+        onValueChange(e.target.value);
+        setLabel(e.target.options[e.target.selectedIndex].text);
+        handleClose();
+      },
+      onKeyDown: (e) => {
+        if (e.code === "Space") {
+          onOpen && onOpen();
+        }
+      },
+      ref: (0, import_utils.mergeRefs)([ref, hoverRef]),
+      value: value === void 0 ? tempFix : value,
+      "aria-label": placeholder,
+      "aria-readonly": isReadOnly,
+      style: import_react_native.StyleSheet.flatten([
+        {
+          appearance: "none",
+          WebkitAppearance: "none",
+          MozAppearance: "none",
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          opacity: 0,
+          zIndex: 1,
+          cursor: isDisabled ? "not-allowed" : "pointer"
+        }
+      ]),
+      onClick: onOpen,
+      onFocus: () => {
+        setFocused(true);
+      },
+      onBlur: () => {
+        setFocused(false);
       }
     },
-    ref: (0, _utils.mergeRefs)([ref, hoverRef]),
-    value: value === undefined ? tempFix : value,
-    "aria-label": placeholder,
-    "aria-readonly": isReadOnly,
-    style: _reactNative.StyleSheet.flatten([{
-      appearance: 'none',
-      WebkitAppearance: 'none',
-      MozAppearance: 'none',
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      opacity: 0,
-      zIndex: 1,
-      cursor: isDisabled ? 'not-allowed' : 'pointer'
-    }]),
-    onClick: onOpen,
-    onFocus: () => {
-      setFocused(true);
-    },
-    onBlur: () => {
-      setFocused(false);
-    }
-  }), /*#__PURE__*/_react.default.createElement("option", {
-    disabled: true,
-    value: tempFix
-  }, placeholder), children));
+    /* @__PURE__ */ import_react.default.createElement("option", { disabled: true, value: tempFix }, placeholder),
+    children
+  ));
 });
-exports.SelectPortal = SelectPortal;
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  SelectPortal
+});
 //# sourceMappingURL=SelectPortal.js.map

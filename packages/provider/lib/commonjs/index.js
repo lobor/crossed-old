@@ -1,31 +1,40 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "CrossedContext", {
-  enumerable: true,
-  get: function () {
-    return _Provider.CrossedContext;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var src_exports = {};
+__export(src_exports, {
+  CrossedContext: () => import_Provider.CrossedContext,
+  CrossedContextProvider: () => import_Provider.CrossedContextProvider,
+  createProvider: () => createProvider
 });
-Object.defineProperty(exports, "CrossedContextProvider", {
-  enumerable: true,
-  get: function () {
-    return _Provider.CrossedContextProvider;
-  }
-});
-exports.createProvider = void 0;
-var _Provider = require("./Provider");
-const createProvider = _ref => {
-  let {
-    StyledProvider
-  } = _ref;
-  const CrossedStyledProvider = (0, _Provider.Provider)({
-    StyledProvider
-  });
-  CrossedStyledProvider.displayName = 'CrossedStyledProvider';
+module.exports = __toCommonJS(src_exports);
+var import_Provider = require("./Provider");
+const createProvider = ({
+  StyledProvider
+}) => {
+  const CrossedStyledProvider = (0, import_Provider.Provider)({ StyledProvider });
+  CrossedStyledProvider.displayName = "CrossedStyledProvider";
   return CrossedStyledProvider;
 };
-exports.createProvider = createProvider;
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  CrossedContext,
+  CrossedContextProvider,
+  createProvider
+});
 //# sourceMappingURL=index.js.map

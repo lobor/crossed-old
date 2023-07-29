@@ -9,7 +9,7 @@
     "docs": "turbo run dev --filter=crossed-docs",
     "test": "bash ./scripts/test.sh",
     "dev": "turbo run dev",
-    "watch": "turbo run watch --filter=@crossed*",
+    "watch": "turbo run watch --filter=@crossed* --no-cache",
     "build": "turbo run build --filter=@crossed* --no-cache",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore",

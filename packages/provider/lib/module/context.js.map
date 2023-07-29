@@ -1,1 +1,6 @@
-{"version":3,"names":["createContext","AlertProvider","useAlert"],"sourceRoot":"../../src","sources":["context.tsx"],"mappings":"AAAA,SAASA,aAAa,QAAQ,gBAAgB;AAE9C,OAAO,MAAM,CAACC,aAAa,EAAEC,QAAQ,CAAC,GAAGF,aAAa,CAAM,cAAc,CAAC"}
+{
+  "version": 3,
+  "sources": ["../../src/context.tsx"],
+  "mappings": "AAAA,SAAS,qBAAqB;AAEvB,MAAM,CAAC,eAAe,QAAQ,IAAI,cAAmB,cAAc;",
+  "names": []
+}

@@ -1,12 +1,14 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { BackHandler } from 'react-native';
+import React from "react";
+import { useEffect } from "react";
+import { BackHandler } from "react-native";
 let keyboardDismissHandlers = [];
-export const keyboardDismissHandlerManager = {
-  push: handler => {
+const keyboardDismissHandlerManager = {
+  push: (handler) => {
     keyboardDismissHandlers.push(handler);
     return () => {
-      keyboardDismissHandlers = keyboardDismissHandlers.filter(h => h !== handler);
+      keyboardDismissHandlers = keyboardDismissHandlers.filter(
+        (h) => h !== handler
+      );
     };
   },
   length: () => keyboardDismissHandlers.length,
@@ -14,17 +16,10 @@ export const keyboardDismissHandlerManager = {
     return keyboardDismissHandlers.pop();
   }
 };
-
-/**
- * Handles attaching callback for Escape key listener on web and Back button listener on Android
- */
-export const useKeyboardDismissable = _ref => {
-  let {
-    enabled,
-    callback
-  } = _ref;
+const useKeyboardDismissable = ({ enabled, callback }) => {
   React.useEffect(() => {
-    let cleanupFn = () => {};
+    let cleanupFn = () => {
+    };
     if (enabled) {
       cleanupFn = keyboardDismissHandlerManager.push(callback);
     } else {
@@ -34,27 +29,25 @@ export const useKeyboardDismissable = _ref => {
       cleanupFn();
     };
   }, [enabled, callback]);
-  useBackHandler({
-    enabled,
-    callback
-  });
+  useBackHandler({ enabled, callback });
 };
-export function useBackHandler(_ref2) {
-  let {
-    enabled,
-    callback
-  } = _ref2;
+function useBackHandler({ enabled, callback }) {
   useEffect(() => {
     let backHandler = () => {
       callback();
       return true;
     };
     if (enabled) {
-      BackHandler.addEventListener('hardwareBackPress', backHandler);
+      BackHandler.addEventListener("hardwareBackPress", backHandler);
     } else {
-      BackHandler.removeEventListener('hardwareBackPress', backHandler);
+      BackHandler.removeEventListener("hardwareBackPress", backHandler);
     }
-    return () => BackHandler.removeEventListener('hardwareBackPress', backHandler);
+    return () => BackHandler.removeEventListener("hardwareBackPress", backHandler);
   }, [enabled, callback]);
 }
+export {
+  keyboardDismissHandlerManager,
+  useBackHandler,
+  useKeyboardDismissable
+};
 //# sourceMappingURL=useKeyboardDismisssable.js.map

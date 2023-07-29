@@ -1,1 +1,6 @@
-{"version":3,"names":["React","forwardRef","ActionsheetDragIndicator","StyledActionsheetDragIndicator","_ref","ref","children","props","createElement","_extends"],"sourceRoot":"../../src","sources":["ActionsheetDragIndicator.tsx"],"mappings":";AAAA,OAAOA,KAAK,IAAIC,UAAU,QAAQ,OAAO;AAEzC,SAASC,wBAAwBA,CAC/BC,8BAAsD,EACtD;EACA,oBAAOF,UAAU,CACf,CAAAG,IAAA,EAAiDC,GAAS,KAAK;IAAA,IAA9D;MAAEC,QAAQ;MAAE,GAAGC;IAA8B,CAAC,GAAAH,IAAA;IAC7C,oBACEJ,KAAA,CAAAQ,aAAA,CAACL,8BAA8B,EAAAM,QAAA;MAACJ,GAAG,EAAEA;IAAI,GAAME,KAAK,GACjDD,QAC6B,CAAC;EAErC,CACF,CAAC;AACH;AACA,eAAeJ,wBAAwB"}
+{
+  "version": 3,
+  "sources": ["../../src/ActionsheetDragIndicator.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAElC,SAAS,yBACP,gCACA;AACA,SAAO;AAAA,IACL,CAAC,EAAE,UAAU,GAAG,MAAM,GAA2B,QAAc;AAC7D,aACE,oCAAC,kCAA+B,KAAW,GAAI,SAC5C,QACH;AAAA,IAEJ;AAAA,EACF;AACF;AACA,IAAO,mCAAQ;",
+  "names": []
+}

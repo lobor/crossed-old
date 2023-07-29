@@ -1,20 +1,44 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Select_exports = {};
+__export(Select_exports, {
+  Select: () => Select
 });
-exports.Select = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _SelectContext = require("./SelectContext");
-var _interactions = require("@react-native-aria/interactions");
-var _hooks = require("@crossed/hooks");
-var _formControl = require("@crossed/form-control");
-var _focus = require("@react-native-aria/focus");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const Select = StyledSelect => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
+module.exports = __toCommonJS(Select_exports);
+var import_react = __toESM(require("react"));
+var import_SelectContext = require("./SelectContext");
+var import_interactions = require("@react-native-aria/interactions");
+var import_hooks = require("@crossed/hooks");
+var import_form_control = require("@crossed/form-control");
+var import_focus = require("@react-native-aria/focus");
+const Select = (StyledSelect) => (0, import_react.forwardRef)(
+  ({
     children,
     isDisabled,
     isInvalid,
@@ -24,73 +48,89 @@ const Select = StyledSelect => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) =
     isFocused: isFocusedProp,
     isFocusVisible: isFocusVisibleProp,
     selectedValue: selectedOption,
-    selectedLabel: selectedLabel,
+    selectedLabel,
     onValueChange,
     defaultValue,
     onClose,
     onOpen,
     closeOnOverlayClick,
     ...props
-  } = _ref;
-  const [placeholderState, setPlaceholderState] = _react.default.useState('');
-  const [isFocused, setIsFocused] = _react.default.useState(false);
-  const {
-    isFocusVisible,
-    focusProps
-  } = (0, _focus.useFocusRing)();
-  const hoverRef = _react.default.useRef(null);
-  const {
-    hoverProps,
-    isHovered
-  } = (0, _interactions.useHover)({
-    isDisabled
-  }, hoverRef);
-  const [value, setValue] = (0, _hooks.useControllableState)({
-    value: selectedOption,
-    defaultValue,
-    onChange: newValue => {
-      onValueChange && onValueChange(newValue);
-    }
-  });
-  const [label, setLabel] = _react.default.useState(selectedLabel);
-  const [isOpen, setIsOpen] = _react.default.useState(false);
-  const handleClose = _react.default.useCallback(() => {
-    setIsOpen(false);
-    onClose && onClose();
-  }, [onClose, setIsOpen]);
-  const inputProps = (0, _formControl.useFormControlContext)();
-  const contextValue = _react.default.useMemo(() => {
-    return {
-      isHovered: isHovered || isHoveredProp,
-      isFocused: isFocused || isFocusedProp,
-      isDisabled: isDisabled || inputProps.isDisabled,
-      isInvalid: isInvalid || inputProps.isInvalid,
-      isRequired: isRequired || inputProps.isRequired,
-      isReadOnly: isReadOnly || inputProps.isReadOnly,
-      hoverRef: hoverRef,
-      hoverProps: hoverProps,
-      isFocusVisible: isFocusVisibleProp || isFocusVisible,
-      setIsOpen: setIsOpen,
-      onOpen: onOpen,
-      isOpen: isOpen,
-      onValueChange: setValue,
-      handleClose: handleClose,
-      closeOnOverlayClick: closeOnOverlayClick,
-      value: value,
-      label: label,
-      setLabel: setLabel,
-      placeholder: placeholderState,
-      setPlaceholder: setPlaceholderState,
-      setFocused: setIsFocused,
-      focusProps: focusProps
-    };
-  }, [closeOnOverlayClick, handleClose, hoverProps, isDisabled, isFocusVisible, isFocusVisibleProp, isFocused, isFocusedProp, isHovered, isHoveredProp, isInvalid, isOpen, onOpen, setValue, value, setLabel, label, setIsFocused, focusProps, isRequired, inputProps, isReadOnly, setPlaceholderState, placeholderState]);
-  return /*#__PURE__*/_react.default.createElement(StyledSelect, _extends({
-    ref: ref,
-    focusable: false
-  }, props), /*#__PURE__*/_react.default.createElement(_SelectContext.SelectContext.Provider, {
-    value: contextValue
-  }, children));
+  }, ref) => {
+    const [placeholderState, setPlaceholderState] = import_react.default.useState("");
+    const [isFocused, setIsFocused] = import_react.default.useState(false);
+    const { isFocusVisible, focusProps } = (0, import_focus.useFocusRing)();
+    const hoverRef = import_react.default.useRef(null);
+    const { hoverProps, isHovered } = (0, import_interactions.useHover)({ isDisabled }, hoverRef);
+    const [value, setValue] = (0, import_hooks.useControllableState)({
+      value: selectedOption,
+      defaultValue,
+      onChange: (newValue) => {
+        onValueChange && onValueChange(newValue);
+      }
+    });
+    const [label, setLabel] = import_react.default.useState(selectedLabel);
+    const [isOpen, setIsOpen] = import_react.default.useState(false);
+    const handleClose = import_react.default.useCallback(() => {
+      setIsOpen(false);
+      onClose && onClose();
+    }, [onClose, setIsOpen]);
+    const inputProps = (0, import_form_control.useFormControlContext)();
+    const contextValue = import_react.default.useMemo(() => {
+      return {
+        isHovered: isHovered || isHoveredProp,
+        isFocused: isFocused || isFocusedProp,
+        isDisabled: isDisabled || inputProps.isDisabled,
+        isInvalid: isInvalid || inputProps.isInvalid,
+        isRequired: isRequired || inputProps.isRequired,
+        isReadOnly: isReadOnly || inputProps.isReadOnly,
+        hoverRef,
+        hoverProps,
+        isFocusVisible: isFocusVisibleProp || isFocusVisible,
+        setIsOpen,
+        onOpen,
+        isOpen,
+        onValueChange: setValue,
+        handleClose,
+        closeOnOverlayClick,
+        value,
+        label,
+        setLabel,
+        placeholder: placeholderState,
+        setPlaceholder: setPlaceholderState,
+        setFocused: setIsFocused,
+        focusProps
+      };
+    }, [
+      closeOnOverlayClick,
+      handleClose,
+      hoverProps,
+      isDisabled,
+      isFocusVisible,
+      isFocusVisibleProp,
+      isFocused,
+      isFocusedProp,
+      isHovered,
+      isHoveredProp,
+      isInvalid,
+      isOpen,
+      onOpen,
+      setValue,
+      value,
+      setLabel,
+      label,
+      setIsFocused,
+      focusProps,
+      isRequired,
+      inputProps,
+      isReadOnly,
+      setPlaceholderState,
+      placeholderState
+    ]);
+    return /* @__PURE__ */ import_react.default.createElement(StyledSelect, { ref, focusable: false, ...props }, /* @__PURE__ */ import_react.default.createElement(import_SelectContext.SelectContext.Provider, { value: contextValue }, children));
+  }
+);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  Select
 });
-exports.Select = Select;
 //# sourceMappingURL=Select.js.map

@@ -1,3 +1,9 @@
-import { createContext } from '@crossed/utils';
-export const [CheckboxGroupProvider, useCheckboxGroup] = createContext('CheckboxGroupContext');
+import { createContext } from "@crossed/utils";
+const [CheckboxGroupProvider, useCheckboxGroup] = createContext(
+  "CheckboxGroupContext"
+);
+export {
+  CheckboxGroupProvider,
+  useCheckboxGroup
+};
 //# sourceMappingURL=CheckboxGroupContext.js.map

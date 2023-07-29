@@ -1,1 +1,6 @@
-{"version":3,"names":["Provider","MainProvider","CrossedContextProvider","CrossedContext","createProvider","_ref","StyledProvider","CrossedStyledProvider","displayName"],"sourceRoot":"../../src","sources":["index.ts"],"mappings":"AAAA,SACEA,QAAQ,IAAIC,YAAY,EACxBC,sBAAsB,EACtBC,cAAc,QACT,YAAY;AAEnB,OAAO,MAAMC,cAAc,GAAGC,IAAA,IAIxB;EAAA,IAJ8C;IAClDC;EAGF,CAAC,GAAAD,IAAA;EACC,MAAME,qBAAqB,GAAGN,YAAY,CAAC;IAAEK;EAAe,CAAC,CAAQ;EACrEC,qBAAqB,CAACC,WAAW,GAAG,uBAAuB;EAC3D,OAAOD,qBAAqB;AAC9B,CAAC;AACD,SAASL,sBAAsB,EAAEC,cAAc"}
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "mappings": "AAAA;AAAA,EACE,YAAY;AAAA,EACZ;AAAA,EACA;AAAA,OACK;AAEA,MAAM,iBAAiB,CAAsB;AAAA,EAClD;AACF,MAEM;AACJ,QAAM,wBAAwB,aAAa,EAAE,eAAe,CAAC;AAC7D,wBAAsB,cAAc;AACpC,SAAO;AACT;",
+  "names": []
+}

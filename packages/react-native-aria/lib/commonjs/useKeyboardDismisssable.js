@@ -1,21 +1,49 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var useKeyboardDismisssable_exports = {};
+__export(useKeyboardDismisssable_exports, {
+  keyboardDismissHandlerManager: () => keyboardDismissHandlerManager,
+  useBackHandler: () => useBackHandler,
+  useKeyboardDismissable: () => useKeyboardDismissable
 });
-exports.keyboardDismissHandlerManager = void 0;
-exports.useBackHandler = useBackHandler;
-exports.useKeyboardDismissable = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _reactNative = require("react-native");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+module.exports = __toCommonJS(useKeyboardDismisssable_exports);
+var import_react = __toESM(require("react"));
+var import_react2 = require("react");
+var import_react_native = require("react-native");
 let keyboardDismissHandlers = [];
 const keyboardDismissHandlerManager = {
-  push: handler => {
+  push: (handler) => {
     keyboardDismissHandlers.push(handler);
     return () => {
-      keyboardDismissHandlers = keyboardDismissHandlers.filter(h => h !== handler);
+      keyboardDismissHandlers = keyboardDismissHandlers.filter(
+        (h) => h !== handler
+      );
     };
   },
   length: () => keyboardDismissHandlers.length,
@@ -23,18 +51,10 @@ const keyboardDismissHandlerManager = {
     return keyboardDismissHandlers.pop();
   }
 };
-
-/**
- * Handles attaching callback for Escape key listener on web and Back button listener on Android
- */
-exports.keyboardDismissHandlerManager = keyboardDismissHandlerManager;
-const useKeyboardDismissable = _ref => {
-  let {
-    enabled,
-    callback
-  } = _ref;
-  _react.default.useEffect(() => {
-    let cleanupFn = () => {};
+const useKeyboardDismissable = ({ enabled, callback }) => {
+  import_react.default.useEffect(() => {
+    let cleanupFn = () => {
+    };
     if (enabled) {
       cleanupFn = keyboardDismissHandlerManager.push(callback);
     } else {
@@ -44,28 +64,26 @@ const useKeyboardDismissable = _ref => {
       cleanupFn();
     };
   }, [enabled, callback]);
-  useBackHandler({
-    enabled,
-    callback
-  });
+  useBackHandler({ enabled, callback });
 };
-exports.useKeyboardDismissable = useKeyboardDismissable;
-function useBackHandler(_ref2) {
-  let {
-    enabled,
-    callback
-  } = _ref2;
-  (0, _react.useEffect)(() => {
+function useBackHandler({ enabled, callback }) {
+  (0, import_react2.useEffect)(() => {
     let backHandler = () => {
       callback();
       return true;
     };
     if (enabled) {
-      _reactNative.BackHandler.addEventListener('hardwareBackPress', backHandler);
+      import_react_native.BackHandler.addEventListener("hardwareBackPress", backHandler);
     } else {
-      _reactNative.BackHandler.removeEventListener('hardwareBackPress', backHandler);
+      import_react_native.BackHandler.removeEventListener("hardwareBackPress", backHandler);
     }
-    return () => _reactNative.BackHandler.removeEventListener('hardwareBackPress', backHandler);
+    return () => import_react_native.BackHandler.removeEventListener("hardwareBackPress", backHandler);
   }, [enabled, callback]);
 }
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  keyboardDismissHandlerManager,
+  useBackHandler,
+  useKeyboardDismissable
+});
 //# sourceMappingURL=useKeyboardDismisssable.js.map

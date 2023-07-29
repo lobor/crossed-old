@@ -1,39 +1,46 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Fade_exports = {};
+__export(Fade_exports, {
+  default: () => Fade_default
 });
-exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _PresenceTransition = _interopRequireDefault(require("./PresenceTransition"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-// import type { IFadeProps } from './types';
-
-const Fade = (_ref, ref) => {
-  let {
-    children,
-    ...props
-  } = _ref;
+module.exports = __toCommonJS(Fade_exports);
+var import_react = __toESM(require("react"));
+var import_PresenceTransition = __toESM(require("./PresenceTransition"));
+const Fade = ({ children, ...props }, ref) => {
   const {
     in: animationState,
     // entryDuration,
     // exitDuration,
     ...resolvedProps
   } = props;
-
-  // if (entryDuration) {
-  //   resolvedProps.animate.transition.duration = entryDuration;
-  // }
-  // if (exitDuration) {
-  //   resolvedProps.exit.transition.duration = exitDuration;
-  // }
-
-  return /*#__PURE__*/_react.default.createElement(_PresenceTransition.default, _extends({
-    visible: animationState,
-    ref: ref
-  }, resolvedProps), children);
+  return /* @__PURE__ */ import_react.default.createElement(import_PresenceTransition.default, { visible: animationState, ref, ...resolvedProps }, children);
 };
-var _default = /*#__PURE__*/_react.default.forwardRef(Fade);
-exports.default = _default;
+var Fade_default = import_react.default.forwardRef(Fade);
 //# sourceMappingURL=Fade.js.map

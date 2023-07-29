@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Platform } from 'react-native';
-export const useHover = () => {
+import { useState } from "react";
+import { Platform } from "react-native";
+const useHover = () => {
   const [isHovered, setHovered] = useState(false);
   return {
     hoverProps: {
@@ -10,7 +10,7 @@ export const useHover = () => {
     isHovered
   };
 };
-export const useFocus = () => {
+const useFocus = () => {
   const [isFocused, setFocused] = useState(false);
   return {
     focusProps: {
@@ -20,7 +20,7 @@ export const useFocus = () => {
     isFocused
   };
 };
-export const useIsPressed = () => {
+const useIsPressed = () => {
   const [isPressed, setIsPressed] = useState(false);
   return {
     pressableProps: {
@@ -30,8 +30,8 @@ export const useIsPressed = () => {
     isPressed
   };
 };
-export const usePressed = (onPressIn, onPressOut) => {
-  if (Platform.OS === 'web') {
+const usePressed = (onPressIn, onPressOut) => {
+  if (Platform.OS === "web") {
     return {
       pressEvents: {
         onMouseDown: onPressIn,
@@ -48,5 +48,18 @@ export const usePressed = (onPressIn, onPressOut) => {
     }
   };
 };
-export { keyboardDismissHandlerManager, useKeyboardDismissable, useBackHandler } from './useKeyboardDismisssable';
+import {
+  keyboardDismissHandlerManager,
+  useKeyboardDismissable,
+  useBackHandler
+} from "./useKeyboardDismisssable";
+export {
+  keyboardDismissHandlerManager,
+  useBackHandler,
+  useFocus,
+  useHover,
+  useIsPressed,
+  useKeyboardDismissable,
+  usePressed
+};
 //# sourceMappingURL=index.js.map

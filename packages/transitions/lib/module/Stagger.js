@@ -1,12 +1,8 @@
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-import React from 'react';
-import PresenceTransition from './PresenceTransition';
-const defaultStaggerConfig = {
-  offset: 0,
-  reverse: false
-};
-const cloneDeep = obj => {
-  if (obj === null || typeof obj !== 'object') {
+import React from "react";
+import PresenceTransition from "./PresenceTransition";
+const defaultStaggerConfig = { offset: 0, reverse: false };
+const cloneDeep = (obj) => {
+  if (obj === null || typeof obj !== "object") {
     return obj;
   }
   let copy;
@@ -26,17 +22,10 @@ const cloneDeep = obj => {
     return copy;
   }
 };
-const Stagger = _ref => {
-  let {
-    children,
-    ...restProps
-  } = _ref;
+const Stagger = ({ children, ...restProps }) => {
   return React.Children.map(children, (child, index) => {
     const clonedAnimationConfig = cloneDeep(restProps);
-    const {
-      animate,
-      exit
-    } = clonedAnimationConfig;
+    const { animate, exit } = clonedAnimationConfig;
     if (animate) {
       if (!animate.transition) {
         animate.transition = {};
@@ -55,10 +44,11 @@ const Stagger = _ref => {
       const offset = stagger.reverse ? (React.Children.count(children) - 1 - index) * stagger.offset : index * stagger.offset;
       exit.transition.delay = exit.transition.delay + offset;
     }
-    return /*#__PURE__*/React.createElement(PresenceTransition, _extends({
-      key: child.key
-    }, clonedAnimationConfig), child);
+    return /* @__PURE__ */ React.createElement(PresenceTransition, { key: child.key, ...clonedAnimationConfig }, child);
   });
 };
-export default Stagger;
+var Stagger_default = Stagger;
+export {
+  Stagger_default as default
+};
 //# sourceMappingURL=Stagger.js.map

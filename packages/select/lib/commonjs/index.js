@@ -1,72 +1,89 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var src_exports = {};
+__export(src_exports, {
+  createSelect: () => createSelect
 });
-exports.createSelect = createSelect;
-var _Select = require("./Select");
-var _SelectTrigger = require("./SelectTrigger");
-var _SelectPortal = require("./SelectPortal");
-var _SelectBackdrop = require("./SelectBackdrop");
-var _SelectDragIndicator = require("./SelectDragIndicator");
-var _SelectDragIndicatorWrapper = require("./SelectDragIndicatorWrapper");
-var _SelectContent = require("./SelectContent");
-var _SelectItem = require("./SelectItem");
-var _SelectInput = require("./SelectInput");
-var _SelectIcon = require("./SelectIcon");
-var _SelectScrollView = require("./SelectScrollView");
-var _SelectVirtualizedList = require("./SelectVirtualizedList");
-var _SelectFlatList = require("./SelectFlatList");
-var _SelectSectionList = require("./SelectSectionList");
-var _SelectSectionHeaderText = require("./SelectSectionHeaderText");
-function createSelect(_ref, _ref2) {
-  let {
-    Root,
-    Trigger,
-    Input,
-    Icon
-  } = _ref;
-  let {
-    Portal,
-    Backdrop,
-    Content,
-    DragIndicator,
-    DragIndicatorWrapper,
-    Item,
-    ItemText,
-    ScrollView,
-    VirtualizedList,
-    FlatList,
-    SectionList,
-    SectionHeaderText
-  } = _ref2;
-  const Select = (0, _Select.Select)(Root);
-  Select.Trigger = (0, _SelectTrigger.SelectTrigger)(Trigger);
-  Select.Input = (0, _SelectInput.SelectInput)(Input);
-  Select.Icon = (0, _SelectIcon.SelectIcon)(Icon);
-
-  // Actionsheet mapping
-  Select.Portal = (0, _SelectPortal.SelectPortal)(Portal);
-  Select.Backdrop = (0, _SelectBackdrop.SelectBackdrop)(Backdrop);
-  Select.Content = (0, _SelectContent.SelectContent)(Content);
-  Select.DragIndicator = (0, _SelectDragIndicator.SelectDragIndicator)(DragIndicator);
-  Select.DragIndicatorWrapper = (0, _SelectDragIndicatorWrapper.SelectDragIndicatorWrapper)(DragIndicatorWrapper);
-  Select.Item = (0, _SelectItem.SelectItem)(Item, ItemText);
-  Select.ScrollView = (0, _SelectScrollView.SelectScrollView)(ScrollView);
-  Select.VirtualizedList = (0, _SelectVirtualizedList.SelectVirtualizedList)(VirtualizedList);
-  Select.FlatList = (0, _SelectFlatList.SelectFlatList)(FlatList);
-  Select.SectionList = (0, _SelectSectionList.SelectSectionList)(SectionList);
-  Select.SectionHeaderText = (0, _SelectSectionHeaderText.SelectSectionHeaderText)(SectionHeaderText);
-  Select.displayName = 'Select';
-  Select.Trigger.displayName = 'Select.Trigger';
-  Select.Input.displayName = 'Select.Input';
-  Select.Icon.displayName = 'Select.Icon';
-  Select.Portal.displayName = 'Select.Portal';
-  Select.Backdrop.displayName = 'Select.Backdrop';
-  Select.Content.displayName = 'Select.Content';
-  Select.DragIndicator.displayName = 'Select.DragIndicator';
-  Select.DragIndicatorWrapper.displayName = 'Select.DragIndicatorWrapper';
-  Select.Item.displayName = 'Select.Item';
+module.exports = __toCommonJS(src_exports);
+var import_Select = require("./Select");
+var import_SelectTrigger = require("./SelectTrigger");
+var import_SelectPortal = require("./SelectPortal");
+var import_SelectBackdrop = require("./SelectBackdrop");
+var import_SelectDragIndicator = require("./SelectDragIndicator");
+var import_SelectDragIndicatorWrapper = require("./SelectDragIndicatorWrapper");
+var import_SelectContent = require("./SelectContent");
+var import_SelectItem = require("./SelectItem");
+var import_SelectInput = require("./SelectInput");
+var import_SelectIcon = require("./SelectIcon");
+var import_SelectScrollView = require("./SelectScrollView");
+var import_SelectVirtualizedList = require("./SelectVirtualizedList");
+var import_SelectFlatList = require("./SelectFlatList");
+var import_SelectSectionList = require("./SelectSectionList");
+var import_SelectSectionHeaderText = require("./SelectSectionHeaderText");
+function createSelect({
+  Root,
+  Trigger,
+  Input,
+  Icon
+}, {
+  Portal,
+  Backdrop,
+  Content,
+  DragIndicator,
+  DragIndicatorWrapper,
+  Item,
+  ItemText,
+  ScrollView,
+  VirtualizedList,
+  FlatList,
+  SectionList,
+  SectionHeaderText
+}) {
+  const Select = (0, import_Select.Select)(Root);
+  Select.Trigger = (0, import_SelectTrigger.SelectTrigger)(Trigger);
+  Select.Input = (0, import_SelectInput.SelectInput)(Input);
+  Select.Icon = (0, import_SelectIcon.SelectIcon)(Icon);
+  Select.Portal = (0, import_SelectPortal.SelectPortal)(Portal);
+  Select.Backdrop = (0, import_SelectBackdrop.SelectBackdrop)(Backdrop);
+  Select.Content = (0, import_SelectContent.SelectContent)(Content);
+  Select.DragIndicator = (0, import_SelectDragIndicator.SelectDragIndicator)(DragIndicator);
+  Select.DragIndicatorWrapper = (0, import_SelectDragIndicatorWrapper.SelectDragIndicatorWrapper)(DragIndicatorWrapper);
+  Select.Item = (0, import_SelectItem.SelectItem)(Item, ItemText);
+  Select.ScrollView = (0, import_SelectScrollView.SelectScrollView)(ScrollView);
+  Select.VirtualizedList = (0, import_SelectVirtualizedList.SelectVirtualizedList)(VirtualizedList);
+  Select.FlatList = (0, import_SelectFlatList.SelectFlatList)(FlatList);
+  Select.SectionList = (0, import_SelectSectionList.SelectSectionList)(SectionList);
+  Select.SectionHeaderText = (0, import_SelectSectionHeaderText.SelectSectionHeaderText)(SectionHeaderText);
+  Select.displayName = "Select";
+  Select.Trigger.displayName = "Select.Trigger";
+  Select.Input.displayName = "Select.Input";
+  Select.Icon.displayName = "Select.Icon";
+  Select.Portal.displayName = "Select.Portal";
+  Select.Backdrop.displayName = "Select.Backdrop";
+  Select.Content.displayName = "Select.Content";
+  Select.DragIndicator.displayName = "Select.DragIndicator";
+  Select.DragIndicatorWrapper.displayName = "Select.DragIndicatorWrapper";
+  Select.Item.displayName = "Select.Item";
   return Select;
 }
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  createSelect
+});
 //# sourceMappingURL=index.js.map

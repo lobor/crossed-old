@@ -1,19 +1,41 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _PresenceTransition = _interopRequireDefault(require("./PresenceTransition"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const defaultStaggerConfig = {
-  offset: 0,
-  reverse: false
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
 };
-const cloneDeep = obj => {
-  if (obj === null || typeof obj !== 'object') {
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Stagger_exports = {};
+__export(Stagger_exports, {
+  default: () => Stagger_default
+});
+module.exports = __toCommonJS(Stagger_exports);
+var import_react = __toESM(require("react"));
+var import_PresenceTransition = __toESM(require("./PresenceTransition"));
+const defaultStaggerConfig = { offset: 0, reverse: false };
+const cloneDeep = (obj) => {
+  if (obj === null || typeof obj !== "object") {
     return obj;
   }
   let copy;
@@ -33,24 +55,17 @@ const cloneDeep = obj => {
     return copy;
   }
 };
-const Stagger = _ref => {
-  let {
-    children,
-    ...restProps
-  } = _ref;
-  return _react.default.Children.map(children, (child, index) => {
+const Stagger = ({ children, ...restProps }) => {
+  return import_react.default.Children.map(children, (child, index) => {
     const clonedAnimationConfig = cloneDeep(restProps);
-    const {
-      animate,
-      exit
-    } = clonedAnimationConfig;
+    const { animate, exit } = clonedAnimationConfig;
     if (animate) {
       if (!animate.transition) {
         animate.transition = {};
       }
       animate.transition.delay = animate.transition.delay ?? 0;
       const stagger = animate.transition.stagger ?? defaultStaggerConfig;
-      const offset = stagger.reverse ? (_react.default.Children.count(children) - 1 - index) * stagger.offset : index * stagger.offset;
+      const offset = stagger.reverse ? (import_react.default.Children.count(children) - 1 - index) * stagger.offset : index * stagger.offset;
       animate.transition.delay = animate.transition.delay + offset;
     }
     if (exit) {
@@ -59,14 +74,11 @@ const Stagger = _ref => {
       }
       exit.transition.delay = exit.transition.delay ?? 0;
       const stagger = exit.transition.stagger ?? defaultStaggerConfig;
-      const offset = stagger.reverse ? (_react.default.Children.count(children) - 1 - index) * stagger.offset : index * stagger.offset;
+      const offset = stagger.reverse ? (import_react.default.Children.count(children) - 1 - index) * stagger.offset : index * stagger.offset;
       exit.transition.delay = exit.transition.delay + offset;
     }
-    return /*#__PURE__*/_react.default.createElement(_PresenceTransition.default, _extends({
-      key: child.key
-    }, clonedAnimationConfig), child);
+    return /* @__PURE__ */ import_react.default.createElement(import_PresenceTransition.default, { key: child.key, ...clonedAnimationConfig }, child);
   });
 };
-var _default = Stagger;
-exports.default = _default;
+var Stagger_default = Stagger;
 //# sourceMappingURL=Stagger.js.map

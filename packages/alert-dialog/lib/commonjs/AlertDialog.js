@@ -1,19 +1,43 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var AlertDialog_exports = {};
+__export(AlertDialog_exports, {
+  AlertDialog: () => AlertDialog
 });
-exports.AlertDialog = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _reactNative = require("react-native");
-var _Context = require("./Context");
-var _overlay = require("@crossed/overlay");
-var _hooks = require("@crossed/hooks");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const AlertDialog = StyledAlertDialog => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
+module.exports = __toCommonJS(AlertDialog_exports);
+var import_react = __toESM(require("react"));
+var import_react_native = require("react-native");
+var import_Context = require("./Context");
+var import_overlay = require("@crossed/overlay");
+var import_hooks = require("@crossed/hooks");
+const AlertDialog = (StyledAlertDialog) => (0, import_react.forwardRef)(
+  ({
     children,
     isOpen,
     onClose,
@@ -23,58 +47,73 @@ const AlertDialog = StyledAlertDialog => /*#__PURE__*/(0, _react.forwardRef)((_r
     avoidKeyboard = false,
     closeOnOverlayClick = true,
     isKeyboardDismissable = true,
-    animationPreset = 'fade',
+    animationPreset = "fade",
     unmountOnExit = true,
     // @ts-ignore
     _experimentalOverlay = true,
     ...props
-  } = _ref;
-  const bottomInset = (0, _hooks.useKeyboardBottomInset)();
-  const [visible, setVisible] = (0, _hooks.useControllableState)({
-    value: isOpen,
-    defaultValue: defaultIsOpen,
-    onChange: val => {
-      if (!val) onClose && onClose();
-    }
-  });
-  const avoidKeyboardSpacer = /*#__PURE__*/_react.default.createElement(_reactNative.View, {
-    style: {
-      // @ts-ignore
-      pointerEvents: 'box-none',
-      width: '100%',
-      height: avoidKeyboard ? bottomInset : undefined
-    }
-  });
-  const handleClose = _react.default.useCallback(() => setVisible(false), [setVisible]);
-  const contextValue = _react.default.useMemo(() => {
-    return {
+  }, ref) => {
+    const bottomInset = (0, import_hooks.useKeyboardBottomInset)();
+    const [visible, setVisible] = (0, import_hooks.useControllableState)({
+      value: isOpen,
+      defaultValue: defaultIsOpen,
+      onChange: (val) => {
+        if (!val)
+          onClose && onClose();
+      }
+    });
+    const avoidKeyboardSpacer = /* @__PURE__ */ import_react.default.createElement(
+      import_react_native.View,
+      {
+        style: {
+          // @ts-ignore
+          pointerEvents: "box-none",
+          width: "100%",
+          height: avoidKeyboard ? bottomInset : void 0
+        }
+      }
+    );
+    const handleClose = import_react.default.useCallback(
+      () => setVisible(false),
+      [setVisible]
+    );
+    const contextValue = import_react.default.useMemo(() => {
+      return {
+        handleClose,
+        initialFocusRef,
+        finalFocusRef,
+        closeOnOverlayClick,
+        avoidKeyboard,
+        bottomInset,
+        visible
+      };
+    }, [
       handleClose,
       initialFocusRef,
-      finalFocusRef,
       closeOnOverlayClick,
+      finalFocusRef,
       avoidKeyboard,
       bottomInset,
       visible
-    };
-  }, [handleClose, initialFocusRef, closeOnOverlayClick, finalFocusRef, avoidKeyboard, bottomInset, visible]);
-  if (!_experimentalOverlay) {
-    return /*#__PURE__*/_react.default.createElement(_Context.AlertDialogContext.Provider, {
-      value: contextValue
-    }, /*#__PURE__*/_react.default.createElement(StyledAlertDialog, _extends({}, props, {
-      ref: ref
-    }), children, avoidKeyboard ? avoidKeyboardSpacer : null));
+    ]);
+    if (!_experimentalOverlay) {
+      return /* @__PURE__ */ import_react.default.createElement(import_Context.AlertDialogContext.Provider, { value: contextValue }, /* @__PURE__ */ import_react.default.createElement(StyledAlertDialog, { ...props, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null));
+    }
+    return /* @__PURE__ */ import_react.default.createElement(
+      import_overlay.Overlay,
+      {
+        isOpen: visible,
+        onRequestClose: handleClose,
+        isKeyboardDismissable,
+        animationPreset,
+        unmountOnExit
+      },
+      /* @__PURE__ */ import_react.default.createElement(import_Context.AlertDialogContext.Provider, { value: contextValue }, /* @__PURE__ */ import_react.default.createElement(StyledAlertDialog, { ...props, ref }, children, avoidKeyboard ? avoidKeyboardSpacer : null))
+    );
   }
-  return /*#__PURE__*/_react.default.createElement(_overlay.Overlay, {
-    isOpen: visible,
-    onRequestClose: handleClose,
-    isKeyboardDismissable: isKeyboardDismissable,
-    animationPreset: animationPreset,
-    unmountOnExit: unmountOnExit
-  }, /*#__PURE__*/_react.default.createElement(_Context.AlertDialogContext.Provider, {
-    value: contextValue
-  }, /*#__PURE__*/_react.default.createElement(StyledAlertDialog, _extends({}, props, {
-    ref: ref
-  }), children, avoidKeyboard ? avoidKeyboardSpacer : null)));
+);
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  AlertDialog
 });
-exports.AlertDialog = AlertDialog;
 //# sourceMappingURL=AlertDialog.js.map

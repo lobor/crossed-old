@@ -1,23 +1,49 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var Context_exports = {};
+__export(Context_exports, {
+  AlertDialogContext: () => AlertDialogContext
 });
-exports.AlertDialogContext = void 0;
-var _react = _interopRequireDefault(require("react"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const AlertDialogContext = /*#__PURE__*/_react.default.createContext({
-  handleClose: () => {},
-  initialFocusRef: {
-    current: null
+module.exports = __toCommonJS(Context_exports);
+var import_react = __toESM(require("react"));
+const AlertDialogContext = import_react.default.createContext({
+  handleClose: () => {
   },
-  finalFocusRef: {
-    current: null
-  },
+  initialFocusRef: { current: null },
+  finalFocusRef: { current: null },
   visible: false,
   closeOnOverlayClick: false,
   avoidKeyboard: false,
   bottomInset: 0
 });
-exports.AlertDialogContext = AlertDialogContext;
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  AlertDialogContext
+});
 //# sourceMappingURL=Context.js.map

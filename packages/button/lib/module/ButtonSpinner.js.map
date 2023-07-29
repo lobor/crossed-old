@@ -1,1 +1,6 @@
-{"version":3,"names":["React","forwardRef","ButtonSpinner","StyledButtonSpinner","props","ref","createElement","_extends","accessible","accessibilityLabel"],"sourceRoot":"../../src","sources":["ButtonSpinner.tsx"],"mappings":";AAAA,OAAOA,KAAK,IAAIC,UAAU,QAAQ,OAAO;AAEzC,OAAO,MAAMC,aAAa,GAAIC,mBAAwB,iBACpDF,UAAU,CAAC,CAACG,KAAU,EAAEC,GAAS,KAAK;EACpC,oBACEL,KAAA,CAAAM,aAAA,CAACH,mBAAmB,EAAAI,QAAA,KACdH,KAAK;IACTI,UAAU;IACVC,kBAAkB,EAAC,SAAS;IAC5BJ,GAAG,EAAEA;EAAI,EACV,CAAC;AAEN,CAAC,CAAC"}
+{
+  "version": 3,
+  "sources": ["../../src/ButtonSpinner.tsx"],
+  "mappings": "AAAA,OAAO,SAAS,kBAAkB;AAE3B,MAAM,gBAAgB,CAAC,wBAC5B,WAAW,CAAC,OAAY,QAAc;AACpC,SACE;AAAA,IAAC;AAAA;AAAA,MACE,GAAG;AAAA,MACJ,YAAU;AAAA,MACV,oBAAmB;AAAA,MACnB;AAAA;AAAA,EACF;AAEJ,CAAC;",
+  "names": []
+}

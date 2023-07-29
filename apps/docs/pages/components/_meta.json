@@ -1,3 +1,5 @@
 {
-  "button": "Button"
+  "button": "Button",
+  "hstack": "HStack",
+  "vstack": "VStack"
 }

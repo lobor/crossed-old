@@ -1,87 +1,105 @@
 "use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var AlertDialogContent_exports = {};
+__export(AlertDialogContent_exports, {
+  default: () => AlertDialogContent_default
 });
-exports.default = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _Context = require("./Context");
-var _reactNative = require("react-native");
-var _focus = require("@react-native-aria/focus");
-var _OverlayAnimatePresence = require("./OverlayAnimatePresence");
-var _dialog = require("@react-native-aria/dialog");
-var _utils = require("@crossed/utils");
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const AlertDialogContent = (StyledAlertDialogContent, AnimatePresence) => /*#__PURE__*/(0, _react.forwardRef)((_ref, ref) => {
-  let {
-    children,
-    focusable = false,
-    ...props
-  } = _ref;
-  const {
-    initialFocusRef,
-    finalFocusRef,
-    handleClose,
-    visible
-  } = _react.default.useContext(_Context.AlertDialogContext);
-  const contentRef = _react.default.useRef(null);
-  const mergedRef = (0, _utils.mergeRefs)([contentRef, ref]);
-
-  // @ts-ignore
-  const {
-    dialogProps
-  } = (0, _dialog.useDialog)({
-    ...props
-  }, mergedRef);
-  _react.default.useEffect(() => {
+module.exports = __toCommonJS(AlertDialogContent_exports);
+var import_react = __toESM(require("react"));
+var import_Context = require("./Context");
+var import_react_native = require("react-native");
+var import_focus = require("@react-native-aria/focus");
+var import_OverlayAnimatePresence = require("./OverlayAnimatePresence");
+var import_dialog = require("@react-native-aria/dialog");
+var import_utils = require("@crossed/utils");
+const AlertDialogContent = (StyledAlertDialogContent, AnimatePresence) => (0, import_react.forwardRef)(({ children, focusable = false, ...props }, ref) => {
+  const { initialFocusRef, finalFocusRef, handleClose, visible } = import_react.default.useContext(import_Context.AlertDialogContext);
+  const contentRef = import_react.default.useRef(null);
+  const mergedRef = (0, import_utils.mergeRefs)([contentRef, ref]);
+  const { dialogProps } = (0, import_dialog.useDialog)({ ...props }, mergedRef);
+  import_react.default.useEffect(() => {
     if (contentRef) {
-      const reactTag = (0, _reactNative.findNodeHandle)(contentRef.current);
+      const reactTag = (0, import_react_native.findNodeHandle)(contentRef.current);
       if (reactTag) {
-        // Issue from react-native side
-        // Hack for now, will fix this later
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
-        _reactNative.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
+        import_react_native.AccessibilityInfo.setAccessibilityFocus(reactTag);
       }
     }
   }, [visible, contentRef]);
-  _react.default.useEffect(() => {
+  import_react.default.useEffect(() => {
+    var _a, _b;
     if (visible) {
-      if (initialFocusRef && initialFocusRef !== null && initialFocusRef !== void 0 && initialFocusRef.current) {
-        var _initialFocusRef$curr;
-        initialFocusRef === null || initialFocusRef === void 0 || (_initialFocusRef$curr = initialFocusRef.current) === null || _initialFocusRef$curr === void 0 ? void 0 : _initialFocusRef$curr.focus();
+      if (initialFocusRef && (initialFocusRef == null ? void 0 : initialFocusRef.current)) {
+        (_a = initialFocusRef == null ? void 0 : initialFocusRef.current) == null ? void 0 : _a.focus();
       }
     } else {
-      if (finalFocusRef && finalFocusRef !== null && finalFocusRef !== void 0 && finalFocusRef.current) {
-        var _finalFocusRef$curren;
-        finalFocusRef === null || finalFocusRef === void 0 || (_finalFocusRef$curren = finalFocusRef.current) === null || _finalFocusRef$curren === void 0 ? void 0 : _finalFocusRef$curren.focus();
+      if (finalFocusRef && (finalFocusRef == null ? void 0 : finalFocusRef.current)) {
+        (_b = finalFocusRef == null ? void 0 : finalFocusRef.current) == null ? void 0 : _b.focus();
       }
     }
   }, [initialFocusRef, finalFocusRef, visible]);
-  return /*#__PURE__*/_react.default.createElement(_focus.FocusScope, {
-    contain: visible,
-    autoFocus: visible && !initialFocusRef,
-    restoreFocus: visible && !finalFocusRef
-  }, /*#__PURE__*/_react.default.createElement(_OverlayAnimatePresence.OverlayAnimatePresence, {
-    visible: visible,
-    AnimatePresence: AnimatePresence
-  }, /*#__PURE__*/_react.default.createElement(StyledAlertDialogContent, _extends({}, props, {
-    ref: mergedRef,
-    onAccessibilityEscape: handleClose,
-    exit: true,
-    "aria-modal": "true",
-    accessibilityRole: _reactNative.Platform.OS === 'web' ? 'alertdialog' : undefined,
-    accessibilityViewIsModal: true,
-    focusable: _reactNative.Platform.OS === 'web' ? focusable : undefined
-  }, dialogProps), children)));
+  return /* @__PURE__ */ import_react.default.createElement(
+    import_focus.FocusScope,
+    {
+      contain: visible,
+      autoFocus: visible && !initialFocusRef,
+      restoreFocus: visible && !finalFocusRef
+    },
+    /* @__PURE__ */ import_react.default.createElement(
+      import_OverlayAnimatePresence.OverlayAnimatePresence,
+      {
+        visible,
+        AnimatePresence
+      },
+      /* @__PURE__ */ import_react.default.createElement(
+        StyledAlertDialogContent,
+        {
+          ...props,
+          ref: mergedRef,
+          onAccessibilityEscape: handleClose,
+          exit: true,
+          "aria-modal": "true",
+          accessibilityRole: import_react_native.Platform.OS === "web" ? "alertdialog" : void 0,
+          accessibilityViewIsModal: true,
+          focusable: import_react_native.Platform.OS === "web" ? focusable : void 0,
+          ...dialogProps
+        },
+        children
+      )
+    )
+  );
 });
-var _default = AlertDialogContent;
-exports.default = _default;
+var AlertDialogContent_default = AlertDialogContent;
 //# sourceMappingURL=AlertDialogContent.js.map
